@@ -13,7 +13,7 @@
 
 | 메인 페이지 | 컬렉션 | 상세 페이지 |
 |---|---|---|
-| ![main](screenshots/main.png) | ![collection](screenshots/collection.png) | ![detail](screenshots/detail.png) |
+| ![main](스크린샷/메인페이지스크린샷.png) | ![collection](스크린샷/컬렉션스크린샷.png) | ![detail](스크린샷/상세페이지스크린샷.png) |
 
 <br>
 
