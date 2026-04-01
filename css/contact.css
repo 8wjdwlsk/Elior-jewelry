@@ -1,0 +1,750 @@
+@charset "utf-8";
+
+.inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* header */
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ede9e3;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 100;
+}
+
+header .inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+/* logo */
+header .logo a {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #1e1a17;
+}
+
+/* ── GNB ── */
+header .gnb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+header .gnb>li {
+    position: relative;
+}
+
+header .gnb .sub li a {
+    font-weight: 500;
+}
+
+header .gnb>li>a {
+    display: block;
+    padding: 0 26px;
+    height: 80px;
+    line-height: 80px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    position: relative;
+    transition: color 0.25s;
+    white-space: nowrap;
+}
+
+header .gnb>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 26px;
+    right: 26px;
+    height: 1px;
+    background: #c9a96e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .gnb>li:hover>a {
+    color: #c9a96e;
+}
+
+header .gnb>li:hover>a::after {
+    transform: scaleX(1);
+}
+
+/* sub menu */
+header .gnb .sub {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff;
+    border: 1px solid #ede9e3;
+    border-top: 2px solid #c9a96e;
+    min-width: 180px;
+    list-style: none;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+}
+
+header .gnb>li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+header .gnb .sub li a {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1e1a17;
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+header .gnb .sub li a:hover {
+    color: #c9a96e;
+    padding-left: 30px;
+}
+
+/* util nav */
+header .util_nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+header .util_nav a {
+    display: flex;
+    align-items: center;
+    color: #1e1a17;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+
+header .util_nav a:hover {
+    color: #c9a96e;
+}
+
+header .util_nav a svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* ── 페이지 레이아웃 ── */
+#contact_wrap {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* ── 사이드바 ── */
+#contact_sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: #FAF8F5;
+    border-right: 1px solid #ede9e3;
+    padding: 80px 0;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.sidebar_label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    padding: 0 48px;
+    margin-bottom: 32px;
+    display: block;
+}
+
+.sidebar_nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar_nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 48px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #8a8078;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.25s, background 0.25s;
+}
+
+.sidebar_nav li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #c9a96e;
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+}
+
+.sidebar_nav li a:hover {
+    color: #1e1a17;
+    background: rgba(201, 169, 110, 0.06);
+}
+
+.sidebar_nav li a.active {
+    color: #1e1a17;
+    background: rgba(201, 169, 110, 0.08);
+}
+
+.sidebar_nav li a.active::before {
+    transform: scaleY(1);
+}
+
+.nav_num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    color: #c9a96e;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+}
+
+/* ── 콘텐츠 ── */
+#contact_content {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact_section {
+    padding: 100px 100px 120px;
+    border-bottom: 1px solid #ede9e3;
+    display: none;
+}
+
+.contact_section.active {
+    display: block;
+}
+
+/* ── 섹션 헤더 ── */
+.section_header {
+    margin-bottom: 60px;
+}
+
+.section_num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.section_header h2 {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+.section_header h2 em {
+    font-weight: 300;
+    color: #c9a96e;
+}
+
+.section_divider {
+    width: 40px;
+    height: 1px;
+    background: #c9a96e;
+}
+
+/* ── 상품 문의 폼 ── */
+.inquiry_intro {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    color: #8a8078;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    margin-bottom: 48px;
+}
+
+.inquiry_form {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form_group label {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8a8078;
+}
+
+.form_group input,
+.form_group select,
+.form_group textarea {
+    font-family:'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 15px;
+    color: #1e1a17;
+    background: #FAF8F5;
+    border: 1px solid #ede9e3;
+    padding: 14px 18px;
+    outline: none;
+    transition: border-color 0.25s;
+    letter-spacing: 0.03em;
+    appearance: none;
+}
+
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus {
+    border-color: #c9a96e;
+}
+
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+    color: #c8bfb5;
+}
+
+.form_group textarea {
+    resize: vertical;
+    min-height: 160px;
+    line-height: 1.8;
+}
+
+.form_notice {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #b8a898;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+.form_submit {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1e1a17;
+    border: none;
+    padding: 18px 56px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+}
+
+.form_submit:hover {
+    background: #c9a96e;
+}
+
+/* ── FAQ ── */
+.faq_category {
+    margin-bottom: 56px;
+}
+
+.faq_category_title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ede9e3;
+}
+
+.faq_item {
+    border-bottom: 1px solid #ede9e3;
+}
+
+.faq_question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    gap: 24px;
+}
+
+.faq_question span {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+}
+
+.faq_icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+    color: #c9a96e;
+}
+
+.faq_icon::before,
+.faq_icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.faq_icon::before {
+    width: 12px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq_icon::after {
+    width: 1px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.faq_item.open .faq_icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    opacity: 0;
+}
+
+.faq_answer {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    color: #8a8078;
+    line-height: 2.1;
+    letter-spacing: 0.03em;
+    padding: 0 0 24px;
+    display: none;
+}
+
+.faq_item.open .faq_answer {
+    display: block;
+}
+
+/* ── 방문 예약 ── */
+.visit_info_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    margin-bottom: 60px;
+    max-width: 800px;
+}
+
+.visit_info_item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 10px;
+}
+
+.visit_info_item p {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #1e1a17;
+    line-height:2;
+    letter-spacing: 0.03em;
+}
+
+.visit_info_item p span {
+    color: #8a8078;
+    font-size: 14px;
+}
+
+.visit_map {
+    width: 720px;
+    height: 480px;
+    background: #f0ebe4;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ede9e3;
+    position: relative;
+    overflow: hidden;
+}
+
+.visit_map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.visit_form {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.visit_form h3 {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+
+/* ── 푸터 ── */
+#footer {
+    background-color: #1e1a17;
+    color: #c8bfb5;
+    padding: 80px 0 0;
+}
+
+.footer_brand .footer_logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer_sns {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.sns_btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3330;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8078;
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.sns_btn:hover {
+    border-color: #c9a96e;
+    color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+}
+
+.footer_newsletter h4 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 24px;
+}
+
+.footer_newsletter p {
+    font-size: 14px;
+    color: #8a8078;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.newsletter_form {
+    display: flex;
+    border: 1px solid #3a3330;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.newsletter_form:focus-within {
+    border-color: #c9a96e;
+}
+
+.newsletter_form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #c8bfb5;
+    letter-spacing: 0.05em;
+}
+
+.newsletter_form input::placeholder {
+    color: #8a8078;
+}
+
+.newsletter_form button {
+    background: #c9a96e;
+    border: none;
+    padding: 12px 20px;
+    color: #1e1a17;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter_form button:hover {
+    background: #c9a96e;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.footer_bottom .copyright {
+    font-size: 12px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.footer_bottom .footer_policy {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_bottom .footer_policy a {
+    font-size: 12px;
+    color: #8a8078;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.footer_bottom .footer_policy a:hover {
+    color: #c9a96e;
+}
+
+.footer_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #3a3330;
+}
+
+/* 고객센터 */
+.footer_info h4 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 18px;
+}
+
+.footer_tel {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.footer_hours {
+    font-size: 14px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.footer_kakao:hover {
+    opacity: 0.7;
+}
+
+/* 사업자 정보 */
+.footer_biz {
+    padding: 24px 0;
+    border-top: 1px solid #3a3330;
+    border-bottom: 1px solid #3a3330;
+    margin-bottom: 0;
+}
+
+.footer_biz p {
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.04em;
+    line-height: 2;
+}
+
+
+.mag_card.featured {
+    grid-column: 1 / 3;
+}
+
+/* 필터링 후 display none 처리 */
+.mag_card[style*="display: none"] {
+    grid-column: unset;
+}

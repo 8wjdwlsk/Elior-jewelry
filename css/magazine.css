@@ -1,0 +1,570 @@
+@charset "utf-8";
+
+.inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* header */
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ede9e3;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 100;
+}
+
+header .inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+/* logo */
+header .logo a {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #1e1a17;
+}
+
+/* ── GNB ── */
+header .gnb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+header .gnb>li {
+    position: relative;
+}
+
+header .gnb .sub li a {
+    font-weight: 500;
+}
+
+header .gnb>li>a {
+    display: block;
+    padding: 0 26px;
+    height: 80px;
+    line-height: 80px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    position: relative;
+    transition: color 0.25s;
+    white-space: nowrap;
+}
+
+header .gnb>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 26px;
+    right: 26px;
+    height: 1px;
+    background: #c9a96e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .gnb>li:hover>a {
+    color: #c9a96e;
+}
+
+header .gnb>li:hover>a::after {
+    transform: scaleX(1);
+}
+
+/* sub menu */
+header .gnb .sub {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff;
+    border: 1px solid #ede9e3;
+    border-top: 2px solid #c9a96e;
+    min-width: 180px;
+    list-style: none;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+}
+
+header .gnb>li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+header .gnb .sub li a {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1e1a17;
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+header .gnb .sub li a:hover {
+    color: #c9a96e;
+    padding-left: 30px;
+}
+
+/* util nav */
+header .util_nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+header .util_nav a {
+    display: flex;
+    align-items: center;
+    color: #1e1a17;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+
+header .util_nav a:hover {
+    color: #c9a96e;
+}
+
+header .util_nav a svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* ── 페이지 헤더 ── */
+#page_hero {
+    background: #FAF8F5;
+    padding: 100px 0 80px;
+    text-align: center;
+}
+
+#page_hero .page_label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 16px;
+}
+
+#page_hero h1 {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #1e1a17;
+    margin-bottom: 16px;
+}
+
+#page_hero p {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: #8a8078;
+    line-height: 1.9;
+}
+
+/* ── 필터 탭 ── */
+#filter_tab {
+    border-bottom: 1px solid #ede9e3;
+    background: #fff;
+    top: 80px;
+    z-index: 50;
+}
+
+#filter_tab .inner_box {
+    display: flex;
+    gap: 0;
+    padding: 0 80px;
+}
+
+.filter_btn {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: #8a8078;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s;
+    white-space: nowrap;
+}
+
+.filter_btn:hover {
+    color: #1e1a17;
+}
+
+.filter_btn.active {
+    color: #1e1a17;
+    border-bottom-color: #c9a96e;
+    font-weight: 500;
+}
+
+/* ── 카드 그리드 ── */
+#magazine {
+    padding: 80px 0 160px;
+    background: #fff;
+}
+
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 32px;
+}
+
+/* ── 카드 ── */
+.mag_card {
+    position: relative;
+    cursor: pointer;
+}
+
+.mag_card .card_img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: unset;
+    height: 400px;
+    background: #f0ebe4;
+    margin-bottom: 20px;
+}
+
+.mag_card .card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 카드 이미지 플레이스홀더 (이미지 없을 때) */
+.card_img_placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 카드 태그 */
+.card_tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    background: #e8d4b0;
+    padding: 5px 12px;
+    z-index: 1;
+}
+
+.card_tag.event {
+    background: #c9a96e;
+    color: #fff;
+}
+
+.card_tag.guide {
+    background: #1e1a17;
+    color: #e8d4b0;
+}
+
+.card_tag.service {
+    background: #f0ebe4;
+    color: #8a7060;
+}
+
+/* 카드 텍스트 */
+
+.card_title {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1e1a17;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    transition: color 0.25s;
+}
+
+.mag_card:hover .card_title {
+    color: #c9a96e;
+}
+
+.card_desc {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8a8078;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid #ede9e3;
+}
+
+.card_arrow {
+    font-size: 13px;
+    color: #c9a96e;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.mag_card:hover .card_arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── 피처드 카드 ── */
+.mag_card.featured {
+    grid-column: 1 / 3;
+}
+
+.mag_card.featured .card_img {
+   aspect-ratio: unset;
+    height: 400px;
+}
+
+.mag_card.featured .card_title {
+    font-size: 26px;
+}
+
+
+/* ── 푸터 ── */
+#footer {
+    background-color: #1e1a17;
+    color: #c8bfb5;
+    padding: 80px 0 0;
+}
+
+.footer_brand .footer_logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer_sns {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.sns_btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3330;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8078;
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.sns_btn:hover {
+    border-color: #c9a96e;
+    color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+}
+
+.footer_newsletter h4 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 17px;
+    font-weight:500;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 24px;
+}
+
+.footer_newsletter p {
+    font-size: 14px;
+    color: #8a8078;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.newsletter_form {
+    display: flex;
+    border: 1px solid #3a3330;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.newsletter_form:focus-within {
+    border-color: #c9a96e;
+}
+
+.newsletter_form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #c8bfb5;
+    letter-spacing: 0.05em;
+}
+
+.newsletter_form input::placeholder {
+    color: #8a8078;
+}
+
+.newsletter_form button {
+    background: #c9a96e;
+    border: none;
+    padding: 12px 20px;
+    color: #1e1a17;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter_form button:hover {
+    background: #c9a96e;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.footer_bottom .copyright {
+    font-size: 12px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.footer_bottom .footer_policy {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_bottom .footer_policy a {
+    font-size: 12px;
+    color: #8a8078;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.footer_bottom .footer_policy a:hover {
+    color: #c9a96e;
+}
+
+.footer_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #3a3330;
+}
+
+/* 고객센터 */
+.footer_info h4 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 18px;
+}
+
+.footer_tel {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.footer_hours {
+    font-size: 14px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.footer_kakao:hover {
+    opacity: 0.7;
+}
+
+/* 사업자 정보 */
+.footer_biz {
+    padding: 24px 0;
+    border-top: 1px solid #3a3330;
+    border-bottom: 1px solid #3a3330;
+    margin-bottom: 0;
+}
+
+.footer_biz p {
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.04em;
+    line-height: 2;
+}
+
+
+.mag_card.featured {
+    grid-column: 1 / 3;
+}
+
+/* 필터링 후 display none 처리 */
+.mag_card[style*="display: none"] {
+    grid-column: unset;
+}

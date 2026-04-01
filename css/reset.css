@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400&family=Noto+Sans+KR:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+KR:wght@300;400&family=Noto+Sans+KR:wght@300;400&display=swap');
+
+/* reset -초기화 */
+html, head, body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, address, form, fieldset, legend, table, caption, thead, tbody, tfoot, th, td, header, nav, aside, section, article, main, aside, footer, figure, figcaption, video {
+    margin: 0; padding: 0;
+}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    color: inherit
+}
+em, i, address, cite {font-style: normal;} 
+button {border: none;}
+table {border-collapse: collapse;} /* 셀 간의 간격이 생기지않도록 */
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: rgba(0,0,0,0.7);
+    background: #F2F2F2;
+}
+
+/* 블라인드 텍스트 */
+.blind {
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+}

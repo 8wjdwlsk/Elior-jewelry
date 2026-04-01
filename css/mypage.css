@@ -1,0 +1,1158 @@
+@charset "utf-8";
+
+.inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* header */
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ede9e3;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 100;
+}
+
+header .inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+/* logo */
+header .logo a {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #1e1a17;
+}
+
+/* ── GNB ── */
+header .gnb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+header .gnb>li {
+    position: relative;
+}
+
+header .gnb .sub li a {
+    font-weight: 500;
+}
+
+header .gnb>li>a {
+    display: block;
+    padding: 0 26px;
+    height: 80px;
+    line-height: 80px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    position: relative;
+    transition: color 0.25s;
+    white-space: nowrap;
+}
+
+header .gnb>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 26px;
+    right: 26px;
+    height: 1px;
+    background: #c9a96e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .gnb>li:hover>a {
+    color: #c9a96e;
+}
+
+header .gnb>li:hover>a::after {
+    transform: scaleX(1);
+}
+
+/* sub menu */
+header .gnb .sub {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff;
+    border: 1px solid #ede9e3;
+    border-top: 2px solid #c9a96e;
+    min-width: 180px;
+    list-style: none;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+}
+
+header .gnb>li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+header .gnb .sub li a {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1e1a17;
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+header .gnb .sub li a:hover {
+    color: #c9a96e;
+    padding-left: 30px;
+}
+
+/* util nav */
+header .util_nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+header .util_nav a {
+    display: flex;
+    align-items: center;
+    color: #1e1a17;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+
+header .util_nav a:hover {
+    color: #c9a96e;
+}
+
+header .util_nav a svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* ── 레이아웃 ── */
+#mypage_wrap {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/* ── 사이드바 ── */
+#mypage_sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: #FAF8F5;
+    border-right: 1px solid #ede9e3;
+    padding: 60px 0;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.mypage_profile {
+    padding: 0 48px 40px;
+    border-bottom: 1px solid #ede9e3;
+    margin-bottom: 32px;
+}
+
+.profile_avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1e1a17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #e8d4b0;
+    margin-bottom: 20px;
+}
+
+.profile_name {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #1e1a17;
+    letter-spacing: 0.03em;
+}
+
+.sidebar_label {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 16px;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #c9a96e;
+    padding: 0 48px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.sidebar_nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+}
+
+.sidebar_nav li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 48px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #1e1a17;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.25s, background 0.25s;
+}
+
+.sidebar_nav li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #c9a96e;
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+}
+
+.sidebar_nav li a:hover {
+    color: #1e1a17;
+    background: rgba(201, 169, 110, 0.06);
+}
+
+.sidebar_nav li a.active {
+    color: #1e1a17;
+    background: rgba(201, 169, 110, 0.08);
+}
+
+.sidebar_nav li a.active::before {
+    transform: scaleY(1);
+}
+
+/* ── 콘텐츠 ── */
+#mypage_content {
+    flex: 1;
+    min-width: 0;
+}
+
+.mypage_section {
+    padding: 80px 80px 100px;
+    border-bottom: 1px solid #ede9e3;
+    display: none;
+}
+
+.mypage_section.active {
+    display: block;
+}
+
+.section_header {
+    margin-bottom: 48px;
+}
+
+.section_header h2 {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+
+.section_header h2 em {
+    font-weight: 300;
+    color: #c9a96e;
+}
+
+.section_divider {
+    width: 40px;
+    height: 1px;
+    background: #c9a96e;
+}
+
+/* ── 위시리스트 ── */
+.wishlist_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 20px;
+}
+
+.wish_card {
+    position: relative;
+    cursor: pointer;
+}
+
+.wish_card .card_img {
+    position: relative;
+    overflow: hidden;
+    background: #f0ebe4;
+    margin-bottom: 14px;
+    aspect-ratio: 3 / 4;
+}
+
+.wish_card .card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.wish_remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9a96e;
+    transition: background 0.25s;
+}
+
+.wish_remove:hover {
+    background: #1e1a17;
+    color: #fff;
+}
+
+.wish_card .card_name {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+    transition: color 0.25s;
+}
+
+.wish_card:hover .card_name {
+    color: #c9a96e;
+}
+
+.wish_card .card_price {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.wish_empty {
+    text-align: center;
+    padding: 80px 0;
+    color: #b8a898;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* ── 주문 내역 ── */
+.order_filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.order_filter_btn {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: #8a8078;
+    background: #fff;
+    border: 1px solid #ede9e3;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.order_filter_btn:hover,
+.order_filter_btn.active {
+    background: #1e1a17;
+    border-color: #1e1a17;
+    color: #fff;
+}
+
+.order_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order_card {
+    border: 1px solid #ede9e3;
+    padding: 28px 32px;
+    transition: border-color 0.25s;
+}
+
+.order_card:hover {
+    border-color: #c9a96e;
+}
+
+.order_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ede9e3;
+}
+
+.order_date {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #8a8078;
+    margin-bottom: 5px;
+}
+
+.order_num {
+    font-family:'Noto Serif KR', serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #b8a898;
+}
+
+.order_status {
+    font-family:'Noto Serif KR', serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+}
+
+.order_status.delivered {
+    background: rgba(201, 169, 110, 0.1);
+    color: #c9a96e;
+    font-family:'Noto Serif KR', serif;
+    
+}
+
+.order_status.shipping {
+    background: rgba(30, 26, 23, 0.06);
+    color: #1e1a17;
+    font-family:  'Noto Serif KR', serif;
+    font-weight: 500;
+}
+
+.order_status.preparing {
+    background: #f0ebe4;
+    color: #8a8078;
+}
+
+.order_items {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.order_item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.order_item_img {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    background: #f0ebe4;
+    overflow: hidden;
+}
+
+.order_item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order_item_name {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1e1a17;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+}
+
+.order_item_price {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.order_footer {
+    font-family: 'Noto Serif KR', serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #ede9e3;
+}
+
+.order_total {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+}
+
+.order_total span {
+    font-family: 'Noto Serif KR', serif;
+    color: #c9a96e;
+    font-weight: 500;
+    
+}
+
+.order_actions {
+    display: flex;
+    gap: 8px;
+}
+
+.order_btn {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: 1px solid #ede9e3;
+    background: #fff;
+    color: #8a8078;
+}
+
+.order_btn:hover {
+    border-color: #1e1a17;
+    color: #1e1a17;
+}
+
+.order_btn.primary {
+    background: #1e1a17;
+    border-color: #1e1a17;
+    color: #fff;
+}
+
+.order_btn.primary:hover {
+    background: #c9a96e;
+    border-color: #c9a96e;
+}
+
+/* ── 회원정보 수정 ── */
+.info_form {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form_section_title {
+    font-family:'Noto Sans KR', serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ede9e3;
+    margin-bottom: 4px;
+}
+
+.form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form_group label {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8a8078;
+}
+
+.form_group input,
+.form_group select {
+    font-family:  'Noto Serif KR', serif;
+    font-size: 15px;
+    color: #1e1a17;
+    background: #FAF8F5;
+    border: 1px solid #ede9e3;
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.25s;
+    appearance: none;
+}
+
+.form_group input:focus,
+.form_group select:focus {
+    border-color: #c9a96e;
+}
+
+.form_group input::placeholder {
+    color: #c8bfb5;
+}
+
+.form_submit {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1e1a17;
+    border: none;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+}
+
+.form_submit:hover {
+    background: #c9a96e;
+}
+
+/* ── 쿠폰/포인트 ── */
+.benefit_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.benefit_card {
+    padding: 36px 32px;
+    border: 1px solid #ede9e3;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #c9a96e;
+}
+
+.benefit_card h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    color: #c9a96e;
+    margin-bottom: 16px;
+}
+
+.benefit_value {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+.benefit_value span {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    color: #8a8078;
+}
+
+.benefit_desc {
+    font-family:  'Noto Serif KR', serif;
+    font-size: 12px;
+    color: #8a8078;
+    line-height: 1.8;
+}
+
+/* ── 최근 본 상품 ── */
+.recent_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 20px;
+}
+
+/* ── 배송지 관리 ── */
+.address_list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.address_card {
+    border: 1px solid #ede9e3;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    transition: border-color 0.25s;
+}
+
+.address_card.default {
+    border-color: #c9a96e;
+}
+
+.address_card:hover {
+    border-color: #c9a96e;
+}
+
+.address_badge {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.address_name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e1a17;
+    margin-bottom: 6px;
+}
+
+.address_detail {
+    font-family:'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #8a8078;
+    line-height: 1.9;
+}
+
+.address_actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.address_btn {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 7px 16px;
+    cursor: pointer;
+    border: 1px solid #ede9e3;
+    background: #fff;
+    color: #8a8078;
+    transition: all 0.25s;
+}
+
+.address_btn:hover {
+    border-color: #1e1a17;
+    color: #1e1a17;
+}
+
+.add_btn {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    background: #fff;
+    border: 1px solid #1e1a17;
+    padding: 14px 36px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add_btn:hover {
+    background: #1e1a17;
+    color: #fff;
+}
+
+/* ── 리뷰 관리 ── */
+.review_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my_review_card {
+    border: 1px solid #ede9e3;
+    padding: 28px 32px;
+    transition: border-color 0.25s;
+}
+
+.my_review_card:hover {
+    border-color: #c9a96e;
+}
+
+.review_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.review_product {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+}
+
+.review_stars {
+    color: #c9a96e;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.review_date {
+    font-family:'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #b8a898;
+    letter-spacing: 0.08em;
+}
+
+.review_text {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    color: #4a4238;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+}
+
+.review_actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ── 1:1 문의 ── */
+.inquiry_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inquiry_item {
+    border: 1px solid #ede9e3;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.inquiry_item:hover {
+    border-color: #c9a96e;
+}
+
+.inquiry_status {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.inquiry_status.answered {
+    background: rgba(201, 169, 110, 0.1);
+    color: #c9a96e;
+}
+
+.inquiry_status.waiting {
+    background: rgba(30, 26, 23, 0.06);
+    color: #1e1a17;
+}
+
+.inquiry_title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1e1a17;
+    flex: 1;
+    letter-spacing: 0.02em;
+}
+
+.inquiry_date {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #b8a898;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+}
+
+
+/* ── 푸터 ── */
+#footer {
+    background-color: #1e1a17;
+    color: #c8bfb5;
+    padding: 80px 0 0;
+}
+
+.footer_brand .footer_logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer_sns {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.sns_btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3330;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8078;
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.sns_btn:hover {
+    border-color: #c9a96e;
+    color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+}
+
+.footer_newsletter h4 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 24px;
+}
+
+.footer_newsletter p {
+    font-size: 14px;
+    color: #8a8078;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.newsletter_form {
+    display: flex;
+    border: 1px solid #3a3330;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.newsletter_form:focus-within {
+    border-color: #c9a96e;
+}
+
+.newsletter_form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #c8bfb5;
+    letter-spacing: 0.05em;
+}
+
+.newsletter_form input::placeholder {
+    color: #8a8078;
+}
+
+.newsletter_form button {
+    background: #c9a96e;
+    border: none;
+    padding: 12px 20px;
+    color: #1e1a17;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter_form button:hover {
+    background: #c9a96e;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.footer_bottom .copyright {
+    font-size: 12px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.footer_bottom .footer_policy {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_bottom .footer_policy a {
+    font-size: 12px;
+    color: #8a8078;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.footer_bottom .footer_policy a:hover {
+    color: #c9a96e;
+}
+
+.footer_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #3a3330;
+}
+
+/* 고객센터 */
+.footer_info h4 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 18px;
+}
+
+.footer_tel {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.footer_hours {
+    font-size: 14px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.footer_kakao:hover {
+    opacity: 0.7;
+}
+
+/* 사업자 정보 */
+.footer_biz {
+    padding: 24px 0;
+    border-top: 1px solid #3a3330;
+    border-bottom: 1px solid #3a3330;
+    margin-bottom: 0;
+}
+
+.footer_biz p {
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.04em;
+    line-height: 2;
+}
+
+@media (max-width: 1024px) {
+    .review_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .insta_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer_top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insta_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}

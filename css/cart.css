@@ -1,0 +1,953 @@
+@charset "utf-8";
+
+.inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* header */
+header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ede9e3;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 100;
+}
+
+header .inner_box {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+/* logo */
+header .logo a {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #1e1a17;
+}
+
+/* ── GNB ── */
+header .gnb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+}
+
+header .gnb>li {
+    position: relative;
+}
+
+header .gnb .sub li a {
+    font-weight: 500;
+}
+
+header .gnb>li>a {
+    display: block;
+    padding: 0 26px;
+    height: 80px;
+    line-height: 80px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1e1a17;
+    position: relative;
+    transition: color 0.25s;
+    white-space: nowrap;
+}
+
+header .gnb>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 26px;
+    right: 26px;
+    height: 1px;
+    background: #c9a96e;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .gnb>li:hover>a {
+    color: #c9a96e;
+}
+
+header .gnb>li:hover>a::after {
+    transform: scaleX(1);
+}
+
+/* sub menu */
+header .gnb .sub {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff;
+    border: 1px solid #ede9e3;
+    border-top: 2px solid #c9a96e;
+    min-width: 180px;
+    list-style: none;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+}
+
+header .gnb>li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+header .gnb .sub li a {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #1e1a17;
+    text-decoration: none;
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+header .gnb .sub li a:hover {
+    color: #c9a96e;
+    padding-left: 30px;
+}
+
+/* util nav */
+header .util_nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+header .util_nav a {
+    display: flex;
+    align-items: center;
+    color: #1e1a17;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+
+header .util_nav a:hover {
+    color: #c9a96e;
+}
+
+header .util_nav a svg {
+    width: 25px;
+    height: 25px;
+}
+
+/* ── 공지 배너 ── */
+#notice_bar {
+    width: 100%;
+    background: #1e1a17;
+    padding: 11px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#notice_bar p {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #c8bfb5;
+}
+
+#notice_bar p span {
+    color: #c9a96e;
+    margin-left: 10px;
+}
+
+#notice_close {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #8a8078;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.25s;
+}
+
+#notice_close:hover {
+    color: #c9a96e;
+}
+
+/* ── 페이지 히어로 ── */
+#cart_hero {
+    background: #FAF8F5;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid #ede9e3;
+}
+
+#cart_hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: #1e1a17;
+    letter-spacing: 0.06em;
+}
+
+/* ── 장바구니 레이아웃 ── */
+#cart_wrap {
+    padding: 60px 0 160px;
+    background: #fff;
+}
+
+#cart_wrap .inner_box {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ── 왼쪽: 상품 목록 ── */
+
+.cart_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #1e1a17;
+    margin-bottom: 0;
+}
+
+.cart_header_left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart_check_all {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #8a8078;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    appearance: none;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.cart_check_all:checked {
+    background: #1e1a17;
+    border-color: #1e1a17;
+}
+
+.cart_check_all:checked::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.cart_select_label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #1e1a17;
+}
+
+.cart_delete_selected {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #8a8078;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.25s;
+}
+
+.cart_delete_selected:hover {
+    color: #1e1a17;
+}
+
+/* 상품 아이템 */
+.cart_item {
+    display: grid;
+    grid-template-columns: 20px 100px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid #ede9e3;
+}
+
+.item_check {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #8a8078;
+    background: #fff;
+    cursor: pointer;
+    appearance: none;
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.item_check:checked {
+    background: #1e1a17;
+    border-color: #1e1a17;
+}
+
+.item_check:checked::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    border-left: 1.5px solid #fff;
+    border-bottom: 1.5px solid #fff;
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.item_img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    background: #f0ebe4;
+    flex-shrink: 0;
+}
+
+.item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item_name {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+}
+
+
+/* 수량 조절 */
+.item_qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ede9e3;
+    width: fit-content;
+}
+
+.qty_btn {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #8a8078;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background 0.2s;
+}
+
+.qty_btn:hover {
+    color: #1e1a17;
+    background: #f0ebe4;
+}
+
+.qty_num {
+    width: 36px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ede9e3;
+    border-right: 1px solid #ede9e3;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    color: #1e1a17;
+    outline: none;
+    background: #fff;
+}
+
+.item_price_wrap {
+    text-align: right;
+}
+
+.item_price {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.item_remove {
+    background: none;
+    border: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #b8a898;
+    cursor: pointer;
+    font-family:'Noto Sans KR', serif;
+    transition: color 0.25s;
+    text-decoration: underline;
+}
+
+.item_remove:hover {
+    color: #1e1a17;
+}
+
+/* 빈 장바구니 */
+.cart_empty {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cart_empty p {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 16px;
+    color: #b8a898;
+    line-height: 2;
+    margin-bottom: 32px;
+}
+
+.cart_empty a {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1e1a17;
+    padding: 14px 40px;
+    text-decoration: none;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.cart_empty a:hover {
+    background: #c9a96e;
+}
+
+/* ── 오른쪽: 주문 요약 ── */
+.cart_right {
+    position: sticky;
+    top: 100px;
+}
+
+.order_summary {
+    border: 1px solid #ede9e3;
+    padding: 36px 32px;
+}
+
+.summary_title {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ede9e3;
+}
+
+.summary_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.summary_row .label {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #8a8078;
+}
+
+.summary_row .value {
+    font-family: 'Noto Sans KR', serif;
+    font-size: 15px;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+}
+
+.summary_row .value.free {
+    color: #c9a96e;
+}
+
+.summary_row .value.discount {
+    color: #8a4030;
+}
+
+/* 쿠폰 */
+.coupon_input_wrap {
+    margin: 20px 0;
+    border: 1px solid #ede9e3;
+    display: flex;
+    overflow: hidden;
+    transition: border-color 0.25s;
+}
+
+.coupon_input_wrap:focus-within {
+    border-color: #c9a96e;
+}
+
+.coupon_input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 14px;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+}
+
+.coupon_input::placeholder {
+    color: #c8bfb5;
+}
+
+.coupon_apply_btn {
+    background: #FAF8F5;
+    border: none;
+    border-left: 1px solid #ede9e3;
+    padding: 12px 16px;
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: #8a8078;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+    white-space: nowrap;
+}
+
+.coupon_apply_btn:hover {
+    background: #1e1a17;
+    color: #fff;
+}
+
+/* 배송지 */
+.delivery_section {
+    margin: 20px 0 24px;
+    padding: 20px;
+    background: #FAF8F5;
+}
+
+.delivery_title {
+    font-family: 'Noto Sans KR', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.delivery_select {
+    width: 100%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #1e1a17;
+    background: #fff;
+    border: 1px solid #ede9e3;
+    padding: 11px 14px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    margin-bottom: 10px;
+}
+
+.delivery_select:focus {
+    border-color: #c9a96e;
+}
+
+.delivery_addr {
+    font-family:  'Noto Serif KR', serif;
+    font-size: 13px;
+    color: #8a8078;
+    line-height: 1.8;
+}
+
+/* 최종 합계 */
+.summary_total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid #ede9e3;
+    margin-top: 8px;
+}
+
+.summary_total .label {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e1a17;
+    letter-spacing: 0.04em;
+}
+
+.summary_total .value {
+    font-family: 'Noto Sans KR', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+}
+
+.order_btn {
+    width: 100%;
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1e1a17;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 16px;
+}
+
+.order_btn:hover {
+    background: #c9a96e;
+}
+
+.order_notice {
+    font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    color: #b8a898;
+    letter-spacing: 0.04em;
+    line-height: 1.9;
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* 추천 상품 */
+.recommend_section {
+    margin-top: 80px;
+}
+
+.recommend_title {
+    font-family:  'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.recommend_h3 {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #1e1a17;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+}
+
+.recommend_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 16px;
+}
+
+.rec_card {
+    cursor: pointer;
+}
+
+.rec_card .rec_img {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: #f0ebe4;
+    margin-bottom: 12px;
+}
+
+.rec_card .rec_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.rec_name {
+    font-family: 'Playfair Display', 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #1e1a17;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+    transition: color 0.25s;
+}
+
+.rec_card:hover .rec_name {
+    color: #c9a96e;
+}
+
+.rec_price {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+/* ── 푸터 ── */
+#footer {
+    background-color: #1e1a17;
+    color: #c8bfb5;
+    padding: 80px 0 0;
+}
+
+.footer_brand .footer_logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer_sns {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.sns_btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3330;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a8078;
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.sns_btn:hover {
+    border-color: #c9a96e;
+    color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+}
+
+.footer_newsletter h4 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 24px;
+}
+
+.footer_newsletter p {
+    font-size: 14px;
+    color: #8a8078;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+.newsletter_form {
+    display: flex;
+    border: 1px solid #3a3330;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.newsletter_form:focus-within {
+    border-color: #c9a96e;
+}
+
+.newsletter_form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #c8bfb5;
+    letter-spacing: 0.05em;
+}
+
+.newsletter_form input::placeholder {
+    color: #8a8078;
+}
+
+.newsletter_form button {
+    background: #c9a96e;
+    border: none;
+    padding: 12px 20px;
+    color: #1e1a17;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter_form button:hover {
+    background: #c9a96e;
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.footer_bottom .copyright {
+    font-size: 12px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+}
+
+.footer_bottom .footer_policy {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_bottom .footer_policy a {
+    font-size: 12px;
+    color: #8a8078;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.footer_bottom .footer_policy a:hover {
+    color: #c9a96e;
+}
+
+.footer_top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #3a3330;
+}
+
+/* 고객센터 */
+.footer_info h4 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #f0ebe4;
+    margin-bottom: 18px;
+}
+
+.footer_tel {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #f0ebe4;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.footer_hours {
+    font-size: 14px;
+    color: #8a8078;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.footer_kakao:hover {
+    opacity: 0.7;
+}
+
+/* 사업자 정보 */
+.footer_biz {
+    padding: 24px 0;
+    border-top: 1px solid #3a3330;
+    border-bottom: 1px solid #3a3330;
+    margin-bottom: 0;
+}
+
+.footer_biz p {
+    font-size: 13px;
+    color: #8a8078;
+    letter-spacing: 0.04em;
+    line-height: 2;
+}
+
+@media (max-width: 1024px) {
+    .review_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .insta_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer_top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insta_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
