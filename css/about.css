@@ -38,6 +38,15 @@ header .logo a {
 }
 
 /* ── GNB ── */
+
+.hamburger {
+    display: none;
+}
+
+.gnb_close {
+    display: none;
+}
+
 header .gnb {
     display: flex;
     align-items: center;
@@ -945,7 +954,549 @@ header .util_nav a svg {
     grid-column: 1 / 3;
 }
 
-/* 필터링 후 display none 처리 */
 .mag_card[style*="display: none"] {
     grid-column: unset;
+}
+
+/* ── 태블릿 (1024px 이하) ── */
+@media (max-width: 1024px) {
+
+    .inner_box {
+        padding: 0 40px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 40px;
+        height: 70px;
+    }
+
+    header .logo a {
+        font-size: 26px;
+    }
+
+    header .gnb>li>a {
+        padding: 0 16px;
+        font-size: 13px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    header .gnb>li>a::after {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    header .gnb .sub {
+        top: 70px;
+    }
+
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 40px;
+    }
+
+    #notice_bar p {
+        font-size: 12px;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer_brand {
+        grid-column: 1 / 3;
+    }
+
+    .footer_biz p {
+        font-size: 12px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    /* 사이드바 */
+    #about_sidebar {
+        width: 200px;
+        padding: 48px 0;
+    }
+
+    .sidebar_label {
+        padding: 0 28px;
+    }
+
+    .sidebar_nav li a {
+        padding: 12px 28px;
+        font-size: 13px;
+    }
+
+    /* 콘텐츠 */
+    .about_section {
+        padding: 60px 48px 80px;
+    }
+
+    /* Brand Story */
+    .brand_story_lead {
+        font-size: 18px;
+    }
+
+    .brand_values {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    /* 장인정신 */
+    .craft_visual,
+    .craft_visual2,
+    .craft_visual3 {
+        display: none;
+    }
+
+    .craft_banner {
+        grid-template-columns: 1fr;
+        height: auto;
+        margin: 60px -48px 0;
+        width: calc(100% + 96px);
+    }
+
+    .craft_banner_text { padding: 48px 60px; }
+
+    .craft_banner_img {
+
+        overflow: hidden;
+    }
+
+    .craft_banner_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 아틀리에 */
+    .atelier_intro {
+        gap: 48px;
+    }
+
+    .atelier_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 430px) {
+
+    .inner_box {
+        padding: 0 20px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    header .logo a {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    /* GNB 숨기고 햄버거로 교체 */
+    header .gnb {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 80px 40px;
+        gap: 0;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    header .gnb.open {
+        display: flex;
+    }
+
+    header .gnb>li>a {
+        height: auto;
+        line-height: 1;
+        padding: 18px 0;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        border-bottom: 1px solid #ede9e3;
+        width: 100%;
+    }
+
+    header .gnb>li>a::after {
+        display: none;
+    }
+
+    /* 서브메뉴 */
+    header .gnb .sub {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        border-top: none;
+        padding: 8px 0 8px 16px;
+        min-width: unset;
+        display: none;
+    }
+
+    header .gnb>li.sub_open .sub {
+        display: block;
+    }
+
+    header .gnb .sub li a {
+        font-size: 14px;
+        padding: 8px 0;
+        color: #8a8078;
+    }
+
+    header .gnb .sub li a:hover {
+        padding-left: 8px;
+    }
+
+    /* 유틸 */
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 햄버거 버튼 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1000;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: #1e1a17;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* 닫기 버튼 영역 */
+    .gnb_close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #1e1a17;
+        cursor: pointer;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 16px;
+    }
+
+    #notice_bar p {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    #notice_bar p span {
+        display: block;
+        margin: 2px 0 0;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px 40px;
+    }
+
+    .footer_brand p {
+        max-width: 100%;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer_biz p {
+        font-size: 11px;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
+
+    /* 레이아웃 */
+    #about_wrap {
+        flex-direction: column;
+    }
+
+    #about_sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #ede9e3;
+        padding: 20px 0 0;
+    }
+
+    .sidebar_label {
+        padding: 0 35px;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .sidebar_nav {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 0 20px;
+    }
+
+    .sidebar_nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar_nav li a {
+        padding: 12px 16px;
+        white-space: nowrap;
+        font-size: 13px;
+        border-bottom: 2px solid transparent;
+        gap: 0;
+    }
+
+    .sidebar_nav li a::before {
+        display: none;
+    }
+
+    .sidebar_nav li a.active {
+        border-bottom-color: #c9a96e;
+        background: transparent;
+    }
+
+    /* 콘텐츠 */
+    .about_section {
+        padding: 32px 20px 60px;
+    }
+
+    .section_num {
+        font-size: 10px;
+    }
+
+    .section_header h2 {
+        font-size: 28px;
+    }
+
+    /* Brand Story */
+    .brand_story_lead {
+        font-size: 16px;
+        padding-left: 20px;
+        margin-bottom: 32px;
+    }
+
+    .brand_story_body {
+        gap: 48px;
+        margin-bottom: 48px;
+    }
+
+    .story_row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .story_row.reverse {
+        direction: ltr;
+    }
+
+    .brand_values {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 32px;
+    }
+
+    .value_item {
+        padding: 24px 20px;
+    }
+
+    .value_item .value_num {
+        font-size: 24px;
+    }
+
+    .value_item h4 {
+        font-size: 14px;
+    }
+
+    .value_item p {
+        font-size: 13px;
+    }
+
+    /* 장인정신 */
+    #tab_craft {
+        padding-top: 0;
+    }
+
+    .craft_visual,
+    .craft_visual2,
+    .craft_visual3 {
+        flex-direction: column;
+        height: auto;
+        margin: 0 -20px;
+        width: calc(100% + 40px);
+    }
+
+    .craft_v2_left,
+    .craft_v3_left {
+        width: 100%;
+        padding: 40px 28px;
+    }
+
+    .craft_v2_left::after,
+    .craft_v3_left::before,
+    .craft_v3_left::after,
+    .craft_v2_img::before,
+    .craft_v3_img::after {
+        display: none;
+    }
+
+    .craft_v2_img,
+    .craft_v3_img {
+        flex: unset;
+        width: 100%;
+        height: 280px;
+    }
+
+    .craft_title {
+        font-size: 28px;
+    }
+
+    .craft_desc {
+        font-size: 13px;
+    }
+
+    .craft_banner {
+        grid-template-columns: 1fr;
+        height: auto;
+        margin: 40px -20px 0;
+        width: calc(100% + 40px);
+        min-height: auto;
+    }
+
+    .craft_banner_text {
+        padding: 40px 28px;
+    }
+
+    .craft_banner_img {
+        margin-bottom: 30px;
+    }
+
+    .craft_banner_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .craft_banner_title {
+        font-size: 20px;
+    }
+
+    .craft_banner_desc {
+        font-size: 13px;
+    }
+    .craft_visual{
+        display: none;
+    }
+    .craft_visual2{
+        display: none;
+    }
+    .craft_visual3{
+        display: none;
+    }
+
+    /* 아틀리에 */
+    .atelier_hero {
+        aspect-ratio: 16 / 9;
+        margin-bottom: 140px;
+    }
+
+    .atelier_hero_text {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .atelier_intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .atelier_intro h3 {
+        font-size: 22px;
+    }
+
+    .atelier_intro p {
+        font-size: 13px;
+    }
+
+    .atelier_grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
 }

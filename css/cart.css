@@ -38,6 +38,15 @@ header .logo a {
 }
 
 /* ── GNB ── */
+
+.hamburger {
+    display: none;
+}
+
+.gnb_close {
+    display: none;
+}
+
 header .gnb {
     display: flex;
     align-items: center;
@@ -420,7 +429,7 @@ header .util_nav a svg {
     letter-spacing: 0.08em;
     color: #b8a898;
     cursor: pointer;
-    font-family:'Noto Sans KR', serif;
+    font-family: 'Noto Sans KR', serif;
     transition: color 0.25s;
     text-decoration: underline;
 }
@@ -596,7 +605,7 @@ header .util_nav a svg {
 }
 
 .delivery_addr {
-    font-family:  'Noto Serif KR', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 13px;
     color: #8a8078;
     line-height: 1.8;
@@ -659,11 +668,12 @@ header .util_nav a svg {
 
 /* 추천 상품 */
 .recommend_section {
-    margin-top: 80px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .recommend_title {
-    font-family:  'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 14px;
     letter-spacing: 0.36em;
     text-transform: uppercase;
@@ -916,38 +926,488 @@ header .util_nav a svg {
     line-height: 2;
 }
 
+
+
+/* ── 태블릿 (1024px 이하) ── */
 @media (max-width: 1024px) {
-    .review_grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    .inner_box {
+        padding: 0 40px;
     }
 
-    .insta_grid {
-        grid-template-columns: repeat(4, 1fr);
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 40px;
+        height: 70px;
     }
 
+    header .logo a {
+        font-size: 26px;
+    }
+
+    header .gnb>li>a {
+        padding: 0 16px;
+        font-size: 13px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    header .gnb>li>a::after {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    header .gnb .sub {
+        top: 70px;
+    }
+
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 40px;
+    }
+
+    #notice_bar p {
+        font-size: 12px;
+    }
+
+    /* ── 푸터 ── */
     .footer_top {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .review_grid {
-        grid-template-columns: 1fr;
+        padding-bottom: 40px;
     }
 
-    .insta_grid {
+    .footer_brand {
+        grid-column: 1 / 3;
+    }
+
+    .footer_biz p {
+        font-size: 12px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    /* 히어로 */
+    #cart_hero {
+        padding: 48px 0 40px;
+    }
+
+    #cart_hero h1 {
+        font-size: 34px;
+    }
+
+    /* 레이아웃 */
+    #cart_wrap .inner_box {
+        grid-template-columns: 1fr 320px;
+        gap: 40px;
+    }
+
+    /* 상품 아이템 */
+    .cart_item {
+        grid-template-columns: 20px 80px 1fr auto;
+        gap: 14px;
+        padding: 20px 0;
+    }
+
+    .item_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .item_name {
+        font-size: 14px;
+    }
+
+    /* 추천 상품 */
+    .recommend_grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* 주문 요약 */
+    .order_summary {
+        padding: 28px 24px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .inner_box {
+        padding: 0 20px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    header .logo a {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    /* GNB 숨기고 햄버거로 교체 */
+    header .gnb {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 80px 40px;
+        gap: 0;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    header .gnb.open {
+        display: flex;
+    }
+
+    header .gnb>li>a {
+        height: auto;
+        line-height: 1;
+        padding: 18px 0;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        border-bottom: 1px solid #ede9e3;
+        width: 100%;
+    }
+
+    header .gnb>li>a::after {
+        display: none;
+    }
+
+    /* 서브메뉴 */
+    header .gnb .sub {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        border-top: none;
+        padding: 8px 0 8px 16px;
+        min-width: unset;
+        display: none;
+    }
+
+    header .gnb>li.sub_open .sub {
+        display: block;
+    }
+
+    header .gnb .sub li a {
+        font-size: 14px;
+        padding: 8px 0;
+        color: #8a8078;
+    }
+
+    header .gnb .sub li a:hover {
+        padding-left: 8px;
+    }
+
+    /* 유틸 */
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 햄버거 버튼 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1000;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: #1e1a17;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* 닫기 버튼 영역 */
+    .gnb_close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #1e1a17;
+        cursor: pointer;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 16px;
+    }
+
+    #notice_bar p {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    #notice_bar p span {
+        display: block;
+        margin: 2px 0 0;
+    }
+
+    /* ── 푸터 ── */
     .footer_top {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 40px;
+        padding: 40px 20px 40px;
+    }
+
+    .footer_brand p {
+        max-width: 100%;
     }
 
     .footer_bottom {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer_biz p {
+        font-size: 11px;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
+
+    /* 히어로 */
+    #cart_hero {
+        padding: 32px 0 24px;
+    }
+
+    #cart_hero h1 {
+        font-size: 26px;
+    }
+
+    #cart_hero .section_num {
+        font-size: 10px;
+    }
+
+    /* 레이아웃 — 1열 */
+    #cart_wrap .inner_box {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* 왼쪽 */
+    .cart_left {
+        padding: 0;
+    }
+
+    .cart_header {
+        padding-bottom: 12px;
+    }
+
+    .cart_select_label {
+        font-size: 12px;
+    }
+
+    .cart_delete_selected {
+        font-size: 11px;
+    }
+
+    /* 상품 아이템 */
+    .cart_item {
+        grid-template-columns: 18px 72px 1fr auto;
+        gap: 10px;
+        padding: 16px 0;
+    }
+
+    .item_img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .item_name {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .item_material {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .qty_btn {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .qty_num {
+        width: 32px;
+        height: 28px;
+        font-size: 13px;
+    }
+
+    .item_price {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .item_remove {
+        font-size: 11px;
+    }
+
+    /* 추천 상품 */
+    .recommend_section {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #ede9e3;
+    }
+
+    .recommend_h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .recommend_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 12px;
+    }
+
+    .rec_name {
+        font-size: 12px;
+    }
+
+    .rec_price {
+        font-size: 12px;
+    }
+
+    /* 오른쪽 주문 요약 — 하단 고정 해제하고 아래로 배치 */
+    .cart_right {
+        position: static;
+        height: auto;
+        border-top: 2px solid #1e1a17;
+        margin-top: 32px;
+    }
+
+    .order_summary {
+        padding: 24px 0;
+        border: none;
+    }
+
+    .summary_title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .summary_row .label {
+        font-size: 12px;
+    }
+
+    .summary_row .value {
+        font-size: 13px;
+    }
+
+    .coupon_input {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .coupon_apply_btn {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+
+    .delivery_section {
+        padding: 16px;
+        margin: 16px 0 20px;
+    }
+
+    .delivery_title {
+        font-size: 10px;
+    }
+
+    .delivery_select {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .delivery_addr {
+        font-size: 12px;
+    }
+
+    .summary_total {
+        padding: 16px 0;
+    }
+
+    .summary_total .label {
+        font-size: 14px;
+    }
+
+    .summary_total .value {
+        font-size: 20px;
+    }
+
+    .order_btn {
+        padding: 16px;
+        font-size: 13px;
+    }
+
+    .order_notice {
+        font-size: 10px;
+        margin-top: 12px;
     }
 }

@@ -56,6 +56,11 @@
                     </li>
                     <li><a href="Magazine.html">Magazine</a></li>
                 </ul>
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -158,34 +163,6 @@
                             <button class="item_remove">삭제</button>
                         </div>
                     </div>
-
-                    <!-- 추천 상품 -->
-                    <div class="recommend_section">
-                        <span class="recommend_title">You may also like</span>
-                        <h3 class="recommend_h3">함께 보면 좋은 상품</h3>
-                        <div class="recommend_grid">
-                            <div class="rec_card">
-                                <div class="rec_img"><img src="img/Circle Éternel.jpg" alt=""></div>
-                                <p class="rec_name">Éternel Circle Earring</p>
-                                <p class="rec_price">29,000원</p>
-                            </div>
-                            <div class="rec_card">
-                                <div class="rec_img"><img src="img/Pearl Line.jpg" alt=""></div>
-                                <p class="rec_name">Soleil Layered Necklace</p>
-                                <p class="rec_price">96,000원</p>
-                            </div>
-                            <div class="rec_card">
-                                <div class="rec_img"><img src="img/Harmonie Trio.jpg" alt=""></div>
-                                <p class="rec_name">Mémoire Signet Ring</p>
-                                <p class="rec_price">98,000원</p>
-                            </div>
-                            <div class="rec_card">
-                                <div class="rec_img"><img src="img/Lumière.jpg" alt=""></div>
-                                <p class="rec_name">Céleste Drop Earring</p>
-                                <p class="rec_price">68,000원</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- 오른쪽: 주문 요약 -->
@@ -237,8 +214,38 @@
                         </p>
                     </div>
                 </div>
-
             </div>
+
+            <!-- 추천 상품 -->
+            <div class="inner_box">
+                <div class="recommend_section">
+                    <span class="recommend_title">You may also like</span>
+                    <h3 class="recommend_h3">함께 보면 좋은 상품</h3>
+                    <div class="recommend_grid">
+                        <div class="rec_card">
+                            <div class="rec_img"><img src="img/Circle Éternel.jpg" alt=""></div>
+                            <p class="rec_name">Éternel Circle Earring</p>
+                            <p class="rec_price">29,000원</p>
+                        </div>
+                        <div class="rec_card">
+                            <div class="rec_img"><img src="img/Pearl Line.jpg" alt=""></div>
+                            <p class="rec_name">Soleil Layered Necklace</p>
+                            <p class="rec_price">96,000원</p>
+                        </div>
+                        <div class="rec_card">
+                            <div class="rec_img"><img src="img/Harmonie Trio.jpg" alt=""></div>
+                            <p class="rec_name">Mémoire Signet Ring</p>
+                            <p class="rec_price">98,000원</p>
+                        </div>
+                        <div class="rec_card">
+                            <div class="rec_img"><img src="img/Lumière.jpg" alt=""></div>
+                            <p class="rec_name">Céleste Drop Earring</p>
+                            <p class="rec_price">68,000원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- 푸터 -->
@@ -423,6 +430,31 @@
         });
 
         calcTotal();
+
+        // 햄버거 메뉴
+        const hamburger = document.getElementById('hamburger');
+        const gnb = document.querySelector('.gnb');
+
+        if (hamburger && gnb) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                gnb.classList.toggle('open');
+                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+            });
+
+            // 서브메뉴 토글
+            gnb.querySelectorAll('> li > a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 430) {
+                        const sub = link.nextElementSibling;
+                        if (sub && sub.classList.contains('sub')) {
+                            e.preventDefault();
+                            link.parentElement.classList.toggle('sub_open');
+                        }
+                    }
+                });
+            });
+        }
     </script>
 </body>
 

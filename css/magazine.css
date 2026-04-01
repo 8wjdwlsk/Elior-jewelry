@@ -38,6 +38,15 @@ header .logo a {
 }
 
 /* ── GNB ── */
+
+.hamburger {
+    display: none;
+}
+
+.gnb_close {
+    display: none;
+}
+
 header .gnb {
     display: flex;
     align-items: center;
@@ -360,7 +369,7 @@ header .util_nav a svg {
 }
 
 .mag_card.featured .card_img {
-   aspect-ratio: unset;
+    aspect-ratio: unset;
     height: 400px;
 }
 
@@ -416,7 +425,7 @@ header .util_nav a svg {
 .footer_newsletter h4 {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
     font-size: 17px;
-    font-weight:500;
+    font-weight: 500;
     letter-spacing: 0.30em;
     text-transform: uppercase;
     color: #f0ebe4;
@@ -567,4 +576,394 @@ header .util_nav a svg {
 /* 필터링 후 display none 처리 */
 .mag_card[style*="display: none"] {
     grid-column: unset;
+}
+
+/* ── 태블릿 (1024px 이하) ── */
+@media (max-width: 1024px) {
+
+    .inner_box {
+        padding: 0 40px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 40px;
+        height: 70px;
+    }
+
+    header .logo a {
+        font-size: 26px;
+    }
+
+    header .gnb>li>a {
+        padding: 0 16px;
+        font-size: 13px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    header .gnb>li>a::after {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    header .gnb .sub {
+        top: 70px;
+    }
+
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 40px;
+    }
+
+    #notice_bar p {
+        font-size: 12px;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer_brand {
+        grid-column: 1 / 3;
+    }
+
+    .footer_biz p {
+        font-size: 12px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    /* 페이지 히어로 */
+    #page_hero {
+        padding: 60px 0 48px;
+    }
+
+    #page_hero h1 {
+        font-size: 36px;
+    }
+
+    /* 필터 탭 */
+    #filter_tab .inner_box {
+        padding: 0 40px;
+    }
+
+    .filter_btn {
+        padding: 16px 18px;
+        font-size: 12px;
+    }
+
+    /* 카드 그리드 */
+    #magazine {
+        padding: 60px 0 100px;
+    }
+
+    .card_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 24px;
+    }
+
+    /* 피처드 카드 유지 */
+    .mag_card.featured {
+        grid-column: 1 / 3;
+    }
+
+    .mag_card.featured .card_img {
+        height: 300px;
+    }
+
+    .card_title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .inner_box {
+        padding: 0 20px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    header .logo a {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    /* GNB 숨기고 햄버거로 교체 */
+    header .gnb {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 80px 40px;
+        gap: 0;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    header .gnb.open {
+        display: flex;
+    }
+
+    header .gnb>li>a {
+        height: auto;
+        line-height: 1;
+        padding: 18px 0;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        border-bottom: 1px solid #ede9e3;
+        width: 100%;
+    }
+
+    header .gnb>li>a::after {
+        display: none;
+    }
+
+    /* 서브메뉴 */
+    header .gnb .sub {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        border-top: none;
+        padding: 8px 0 8px 16px;
+        min-width: unset;
+        display: none;
+    }
+
+    header .gnb>li.sub_open .sub {
+        display: block;
+    }
+
+    header .gnb .sub li a {
+        font-size: 14px;
+        padding: 8px 0;
+        color: #8a8078;
+    }
+
+    header .gnb .sub li a:hover {
+        padding-left: 8px;
+    }
+
+    /* 유틸 */
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 햄버거 버튼 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1000;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: #1e1a17;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* 닫기 버튼 영역 */
+    .gnb_close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #1e1a17;
+        cursor: pointer;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 16px;
+    }
+
+    #notice_bar p {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    #notice_bar p span {
+        display: block;
+        margin: 2px 0 0;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px 40px;
+    }
+
+    .footer_brand p {
+        max-width: 100%;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer_biz p {
+        font-size: 11px;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
+
+    /* 히어로 */
+    #page_hero {
+        padding: 36px 0 28px;
+    }
+
+    #page_hero .page_label {
+        font-size: 10px;
+    }
+
+    #page_hero h1 {
+        font-size: 28px;
+    }
+
+    #page_hero p {
+        font-size: 13px;
+    }
+
+    /* 필터 탭 */
+    #filter_tab .inner_box {
+        padding: 0 20px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    #filter_tab .inner_box::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter_btn {
+        padding: 14px 14px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* 카드 그리드 — 1열 */
+    #magazine {
+        padding: 32px 0 80px;
+    }
+
+    .card_grid {
+        gap: 24px;
+    }
+
+    /* 피처드 카드도 1열로 */
+    .mag_card.featured {
+        grid-column: 1;
+    }
+
+    .mag_card.featured .card_img {
+        height: 220px;
+    }
+
+    .mag_card .card_img {
+        height: 200px;
+    }
+
+    /* 카드 태그 */
+    .card_tag {
+        font-size: 10px;
+        padding: 3px 10px;
+        top: 12px;
+        left: 12px;
+    }
+
+    /* 카드 텍스트 */
+    .card_title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card_desc {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .card_date {
+        font-size: 11px;
+    }
+
+    .card_arrow {
+        font-size: 12px;
+    }
+
+    .card_footer {
+        padding-top: 12px;
+    }
 }

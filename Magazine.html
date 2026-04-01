@@ -59,6 +59,11 @@
                         <a href="Magazine.html">Magazine</a>
                     </li>
                 </ul>
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -115,7 +120,7 @@
                         </div>
                         <div class="card_body">
                             <h2 class="card_title">웨딩 시즌 스페셜 — 커플링 전품목 20% 할인</h2>
-                            <p class="card_desc">웨딩 시즌을 맞아 커플링 및 웨딩 주얼리 전품목을 특별 할인가로 만나보세요.  4월 1일 ~ 5월 31일</p>
+                            <p class="card_desc">웨딩 시즌을 맞아 커플링 및 웨딩 주얼리 전품목을 특별 할인가로 만나보세요. 4월 1일 ~ 5월 31일</p>
                         </div>
                     </div>
 
@@ -292,7 +297,33 @@
                     }
                 });
             });
-        });</script>
+        });
+
+        // 햄버거 메뉴
+        const hamburger = document.getElementById('hamburger');
+        const gnb = document.querySelector('.gnb');
+
+        if (hamburger && gnb) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                gnb.classList.toggle('open');
+                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+            });
+
+            // 서브메뉴 토글
+            gnb.querySelectorAll(' li > a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 430) {
+                        const sub = link.nextElementSibling;
+                        if (sub && sub.classList.contains('sub')) {
+                            e.preventDefault();
+                            link.parentElement.classList.toggle('sub_open');
+                        }
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -38,6 +38,15 @@ header .logo a {
 }
 
 /* ── GNB ── */
+
+.hamburger {
+    display: none;
+}
+
+.gnb_close {
+    display: none;
+}
+
 header .gnb {
     display: flex;
     align-items: center;
@@ -381,7 +390,7 @@ header .util_nav a svg {
 .form_group input,
 .form_group select,
 .form_group textarea {
-    font-family:  'Noto Serif KR', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 15px;
     color: #1e1a17;
     background: #FAF8F5;
@@ -500,7 +509,7 @@ header .util_nav a svg {
 }
 
 .option_card h4 {
-    font-family:'Noto Serif KR', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 16px;
     font-weight: 500;
     color: #1e1a17;
@@ -509,13 +518,13 @@ header .util_nav a svg {
 }
 
 .option_card p {
-    font-family:  'Noto Serif KR', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 14px;
     color: #8a8078;
     line-height: 1.8;
 }
 
-.option_card{
+.option_card {
     font-family: 'Playfair Display', 'Noto Serif KR', serif;
     font-size: 13px;
     color: #c9a96e;
@@ -590,7 +599,7 @@ header .util_nav a svg {
 }
 
 .size_table th {
-    font-family: 'Cormorant Garamond','Noto Serif KR', serif;
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -603,7 +612,7 @@ header .util_nav a svg {
 }
 
 .size_table td {
-    font-family:  'Noto Serif KR', serif;
+    font-family: 'Noto Serif KR', serif;
     font-size: 15px;
     color: #4a4238;
     padding: 14px 20px;
@@ -739,6 +748,7 @@ header .util_nav a svg {
     color: #1e1a17;
     font-weight: 500;
 }
+
 /* ── 푸터 ── */
 #footer {
     background-color: #1e1a17;
@@ -937,4 +947,490 @@ header .util_nav a svg {
 /* 필터링 후 display none 처리 */
 .mag_card[style*="display: none"] {
     grid-column: unset;
+}
+
+/* ── 태블릿 (1024px 이하) ── */
+@media (max-width: 1024px) {
+
+    .inner_box {
+        padding: 0 40px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 40px;
+        height: 70px;
+    }
+
+    header .logo a {
+        font-size: 26px;
+    }
+
+    header .gnb>li>a {
+        padding: 0 16px;
+        font-size: 13px;
+        height: 70px;
+        line-height: 70px;
+    }
+
+    header .gnb>li>a::after {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    header .gnb .sub {
+        top: 70px;
+    }
+
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 40px;
+    }
+
+    #notice_bar p {
+        font-size: 12px;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer_brand {
+        grid-column: 1 / 3;
+    }
+
+    .footer_biz p {
+        font-size: 12px;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    #custom_sidebar {
+        width: 200px;
+        padding: 48px 0;
+    }
+
+    .custom_section {
+        padding: 60px 48px 80px;
+    }
+
+    .process_step {
+        gap: 28px;
+    }
+
+    .option_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .size_method {
+        gap: 24px;
+    }
+
+    .case_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .inner_box {
+        padding: 0 20px;
+    }
+
+    /* ── 헤더 ── */
+    header .inner_box {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    header .logo a {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    /* GNB 숨기고 햄버거로 교체 */
+    header .gnb {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 80px 40px;
+        gap: 0;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    header .gnb.open {
+        display: flex;
+    }
+
+    header .gnb>li>a {
+        height: auto;
+        line-height: 1;
+        padding: 18px 0;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+        border-bottom: 1px solid #ede9e3;
+        width: 100%;
+    }
+
+    header .gnb>li>a::after {
+        display: none;
+    }
+
+    /* 서브메뉴 */
+    header .gnb .sub {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        border-top: none;
+        padding: 8px 0 8px 16px;
+        min-width: unset;
+        display: none;
+    }
+
+    header .gnb>li.sub_open .sub {
+        display: block;
+    }
+
+    header .gnb .sub li a {
+        font-size: 14px;
+        padding: 8px 0;
+        color: #8a8078;
+    }
+
+    header .gnb .sub li a:hover {
+        padding-left: 8px;
+    }
+
+    /* 유틸 */
+    header .util_nav {
+        gap: 16px;
+    }
+
+    header .util_nav a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 햄버거 버튼 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1000;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: #1e1a17;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* 닫기 버튼 영역 */
+    .gnb_close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #1e1a17;
+        cursor: pointer;
+    }
+
+    /* ── 공지 배너 ── */
+    #notice_bar {
+        padding: 10px 16px;
+    }
+
+    #notice_bar p {
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    #notice_bar p span {
+        display: block;
+        margin: 2px 0 0;
+    }
+
+    /* ── 푸터 ── */
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px 40px;
+    }
+
+    .footer_brand p {
+        max-width: 100%;
+    }
+
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer_biz p {
+        font-size: 11px;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
+
+    #custom_wrap {
+        flex-direction: column;
+    }
+
+    #custom_sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #ede9e3;
+        padding: 20px 0 0;
+    }
+
+    .sidebar_nav {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 0 20px;
+    }
+
+    .sidebar_label {
+        padding: 0 35px;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .sidebar_nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar_nav li a {
+        padding: 12px 14px;
+        white-space: nowrap;
+        font-size: 12px;
+        border-bottom: 2px solid transparent;
+        gap: 0;
+    }
+
+    .sidebar_nav li a::before {
+        display: none;
+    }
+
+    .sidebar_nav li a.active {
+        border-bottom-color: #c9a96e;
+        background: transparent;
+    }
+
+    .custom_section {
+        padding: 32px 20px 60px;
+    }
+
+    .section_header h2 {
+        font-size: 28px;
+    }
+
+    /* 진행 방식 */
+    .process_intro {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .process_step {
+        grid-template-columns: 40px 1fr;
+        gap: 16px;
+        padding: 24px 0;
+    }
+
+    .process_num {
+        font-size: 28px;
+    }
+
+    .process_info h4 {
+        font-size: 16px;
+    }
+
+    .process_info p {
+        font-size: 13px;
+    }
+
+    .process_tag {
+        font-size: 10px;
+    }
+
+    /* 요청서 */
+    .request_intro {
+        font-size: 13px;
+        margin-bottom: 28px;
+    }
+
+    .form_row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form_group label {
+        font-size: 10px;
+    }
+
+    .form_group input,
+    .form_group select,
+    .form_group textarea {
+        font-size: 14px;
+        padding: 11px 14px;
+    }
+
+    .form_submit {
+        padding: 14px 36px;
+        font-size: 12px;
+    }
+
+    /* 옵션 */
+    .option_tabs {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .option_tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .option_tab_btn {
+        padding: 12px 16px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .option_grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .option_card {
+        padding: 20px 16px;
+    }
+
+    .option_card h4 {
+        font-size: 14px;
+    }
+
+    .option_card p {
+        font-size: 13px;
+    }
+
+    .option_desc {
+        font-size: 13px;
+        padding: 16px;
+    }
+
+    /* 사이즈 가이드 */
+    .size_method {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .size_method_item {
+        padding: 20px 16px;
+    }
+
+    .size_method_item h4 {
+        font-size: 15px;
+    }
+
+    .size_method_item ol {
+        font-size: 13px;
+    }
+
+    .size_table th {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .size_table td {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .size_notice {
+        font-size: 11px;
+        padding: 14px 16px;
+    }
+
+    /* 작업 사례 */
+    .case_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 12px;
+    }
+
+    .case_card h4 {
+        font-size: 14px;
+    }
+
+    .case_card p {
+        font-size: 12px;
+    }
+
+    .case_material {
+        font-size: 11px;
+    }
 }
