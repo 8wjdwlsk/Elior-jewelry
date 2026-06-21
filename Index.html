@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉLIOR</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header id="eliorHeader">
+            <div class="inner_box">
+                <h1 class="logo">
+                    <a href="Index.html"><span>ÉLIOR</span></a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="Collection.html">Collection</a>
+                        <ul class="sub">
+                            <li><a href="collection.html?cat=necklace">Necklace</a></li>
+                            <li><a href="collection.html?cat=earring">Earring</a></li>
+                            <li><a href="collection.html?cat=ring">Ring</a></li>
+                            <li><a href="collection.html?cat=bracelet">Bracelet</a></li>
+                            <li><a href="collection.html?cat=watch">Watch</a></li>
+                            <li><a href="collection.html?cat=couple">Couple Sets</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="About.html">About</a>
+                        <ul class="sub">
+                            <li><a href="about.html?tab=brand">Brand Story</a></li>
+                            <li><a href="about.html?tab=craft">장인정신</a></li>
+                            <li><a href="about.html?tab=atelier">아틀리에</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="Custom.html">Custom</a>
+                        <ul class="sub">
+                            <li><a href="custom.html?tab=process">진행 방식</a></li>
+                            <li><a href="custom.html?tab=request">커스텀 요청서</a></li>
+                            <li><a href="custom.html?tab=option">커스텀 옵션</a></li>
+                            <li><a href="custom.html?tab=size">사이즈 가이드</a></li>
+                            <li><a href="custom.html?tab=case">커스텀 작업 사례</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                        <ul class="sub">
+                            <li><a href="contact.html?tab=inquiry">상품 문의</a></li>
+                            <li><a href="contact.html?tab=faq">자주 묻는 질문</a></li>
+                            <li><a href="contact.html?tab=visit">방문 예약</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="Magazine.html">Magazine</a>
+                    </li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="util_nav">
+                    <a href="#" aria-label="검색">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <circle cx="11" cy="11" r="7" />
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                        </svg>
+                    </a>
+                    <a href="Mypage.html" aria-label="마이페이지">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                        </svg>
+                    </a>
+                    <a href="Cart.html" aria-label="장바구니">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 01-8 0" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="mainVisual">
+            <div class="mv_track" id="mvTrack">
+
+                <!-- Slide 1: 메인 -->
+                <div class="mv_slide slide1">
+                    <figure>
+                        <img src="img/main.jpg" alt="">
+                    </figure>
+                    <div class="mv_text">
+                        <h2 class="mv_title">Special Wedding Season </h2>
+                        <p class="mv_sub">소중한 순간을 더욱 빛내줄 주얼리를 특별한 혜택으로 만나보세요</p>
+                        <a href="#" class="mv_btn light"> 최대 30% 할인 </a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: -->
+                <div class="mv_slide slide2">
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                    <div class="ring r3"></div>
+                    <div class="mv_text">
+                        <p class="mv_label dark">— Make it yours —</p>
+                        <h2 class="mv_title dark">나만의 주얼리를,<br>당신의 이야기로</h2>
+                        <p class="mv_sub dark">소중한 순간을 담아 세상에 단 하나뿐인 주얼리를 만들어드립니다.<br>각인, 스톤 선택, 디자인까지 — 처음부터 끝까지 함께합니다.
+                        </p>
+                        <a href="Custom.html" class="mv_btn dark">커스텀 주문 시작하기</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mv_arrow prev" id="mvPrev">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <button class="mv_arrow next" id="mvNext">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+
+            <div class="mv_dots" id="mvDots">
+                <button class="mv_dot active" data-index="0"></button>
+                <button class="mv_dot" data-index="1"></button>
+            </div>
+
+            <div class="mv_progress" id="mvProgress"></div>
+        </section>
+
+        <section id="intro">
+            <div class="inner_box">
+                <div class="text">
+                    <h2>시간을 초월한 우아함</h2>
+                    <p>ÉLIOR는 절제된 아름다움 속에서 진정한 가치를 전하는 주얼리 브랜드입니다. <br>
+                        프렌치 미니멀리즘에서 영감을 받은 디자인으로, 과하지 않으면서도 깊이 있는 아름다움을 전합니다. <br>
+                        섬세한 디테일과 정제된 컬러, 그리고 절제된 형태는 당신만의 우아함을 더욱 돋보이게 합니다. <br>
+                        ÉLIOR는 특별한 순간뿐만 아니라, 일상의 모든 순간을 더욱 빛나게 합니다. <br>
+                        단순한 장식이 아닌, 당신을 표현하는 하나의 방식으로 경험해보세요.
+                    </p>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bestseller">
+            <div class="inner_box">
+                <h3 class="title">BEST SELLER</h3>
+                <div class="bestitem">
+                    <div class="slider_btns">
+                        <button class="prev_btn" aria-label="이전">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+                        <button class="next_btn" aria-label="다음">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="item">
+                        <li>
+                            <a href=""><img src="img/Pearl Line.jpg" alt=""></a>
+                            <div class="info">
+                                <span>뮤즈 펄 네크리스</span>
+                                <p>657,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/Lumière.jpg" alt=""></a>
+                            <div class="info">
+                                <span>루미에르 이어링</span>
+                                <p>632,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/Harmonie Trio.jpg" alt=""></a>
+                            <div class="info">
+                                <span>하모니 트리오 링</span>
+                                <p>716,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/Circle Éternel.jpg" alt=""></a>
+                            <div class="info">
+                                <span>에테르넬 서클 이어링</span>
+                                <p>589,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/best1.jpg" alt=""></a>
+                            <div class="info">
+                                <span>듀얼 다이아몬드 링</span>
+                                <p>548,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/best2.jpg" alt=""></a>
+                            <div class="info">
+                                <span>인피니티 네크리스</span>
+                                <p>635,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/best3.jpg" alt=""></a>
+                            <div class="info">
+                                <span>블루 가든 이어링</span>
+                                <p>748,000원</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/best4.jpg" alt=""></a>
+                            <div class="info">
+                                <span>실버 범블비 네크리스</span>
+                                <p>635,000원</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="lookbook">
+            <div class="inner_box">
+                <div class="lookbook_title">
+                    <h3>LOOKBOOK</h3>
+                </div>
+                <div class="lookbook_grid">
+                    <div class="look_item large">
+                        <img src="img/lookbookmain.jpg" alt="">
+                        <div class="look_overlay">
+                            <span>2025 S/S Collection</span>
+                        </div>
+                    </div>
+                    <div class="look_item">
+                        <img src="img/lookbook1.png" alt="">
+                        <div class="look_overlay">
+                            <span>다이아몬드 드롭 펜던트</span>
+                        </div>
+                    </div>
+                    <div class="look_item">
+                        <img src="img/lookbook2.png" alt="">
+                        <div class="look_overlay">
+                            <span>다이아몬드 더블 스트랜드 브레이슬릿</span>
+                        </div>
+                    </div>
+                    <div class="look_item">
+                        <img src="img/lookbook3.png" alt="">
+                        <div class="look_overlay">
+                            <span>클래식 다이아몬드 드롭 링</span>
+                        </div>
+                    </div>
+                    <div class="look_item">
+                        <img src="img/lookbook4.png" alt="">
+                        <div class="look_overlay">
+                            <span>다이아몬드 드롭 이어링</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="review">
+            <div class="inner_box">
+                <div class="section_title">
+                    <h3>REVIEW</h3>
+                </div>
+                <div class="review_grid">
+                    <div class="review_card">
+                        <div class="stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <div class="review_text">
+                            <p>처음 받아봤을 때 패키지부터 굉장히 인상 깊었어요. 단순히 제품만 좋은 게 아니라 전체적인 경험 자체가 신경 써서 만들어졌다는 느낌이 들더라고요.</p>
+                            <p>실제로 착용해보니 디자인이 과하지 않으면서도 존재감이 있어서 어떤 스타일에도 잘 어울리고, 매일 착용해도 전혀 질리지 않아요.</p>
+                            <p>시간이 지나도 계속 손이 가는 아이템이라는 점이 가장 만족스러워요.</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer_avatar">J</div>
+                            <div class="reviewer_info">
+                                <p class="name">Jiyeon K.</p>
+                                <p class="product">Muse Pearl Necklace</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review_card">
+                        <div class="stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <div class="review_text">
+                            <p>결혼기념일 선물로 받았는데, 기대 이상으로 만족스러웠어요. 처음에는 예쁘다 정도였는데, 착용할수록 더 매력을 느끼게 되는 제품이에요.</p>
+                            <p>특히 빛에 따라 분위기가 달라지는 느낌이 있어서 더욱 특별하게 느껴져요.</p>
+                            <p>중요한 자리뿐 아니라 일상에서도 자연스럽게 어울려서 활용도가 높다는 점도 정말 좋았습니다.</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer_avatar">S</div>
+                            <div class="reviewer_info">
+                                <p class="name">Soyeon P.</p>
+                                <p class="product">Lumière Earring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review_card">
+                        <div class="stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <div class="review_text">
+                            <p>커플링을 맞춤 제작으로 주문했는데, 상담부터 제작 과정까지 전반적으로 세심하게 케어받는 느낌이었어요.</p>
+                            <p>완성된 제품은 기대했던 것보다 훨씬 정교하고 완성도가 높아서 놀랐습니다. 각인 디테일도 깔끔하고 고급스럽게 표현돼서 오래도록 의미 있게 간직할 수 있을 것
+                                같아요.</p>
+                            <p>비슷한 고민을 하는 분들께도 자신 있게 추천하고 싶어요.</p>
+                        </div>
+                        <div class="reviewer">
+                            <div class="reviewer_avatar">M</div>
+                            <div class="reviewer_info">
+                                <p class="name">Minha L.</p>
+                                <p class="product">Custom Couple Ring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram">
+            <div class="inner_box">
+                <div class="insta_header">
+                    <a href="#" class="insta_handle">
+                        @elior.official
+                    </a>
+                </div>
+                <div class="insta_grid">
+                    <div class="insta_item">
+                        <img src="img/insta1.jpg" alt="Instagram 1">
+                    </div>
+                    <div class="insta_item">
+                        <img src="img/insta2.jpg" alt="Instagram 2">
+                    </div>
+                    <div class="insta_item">
+                        <img src="img/insta3.jpg" alt="Instagram 3">
+                    </div>
+                    <div class="insta_item">
+                        <img src="img/insta4.jpg" alt="Instagram 4">
+                    </div>
+                    <div class="insta_item">
+                        <img src="img/insta5.jpg" alt="Instagram 5">
+                    </div>
+                </div>
+                <div class="insta_cta">
+                    <a href="#">View on Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="inner_box">
+                <div class="footer_top">
+
+                    <!-- Brand -->
+                    <div class="footer_brand">
+                        <a href="Index.html" class="footer_logo">ÉLIOR</a>
+                        <div class="footer_sns">
+                            <a href="#" class="sns_btn" aria-label="Instagram">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                                </svg>
+                            </a>
+                            <a href="#" class="sns_btn" aria-label="Pinterest">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.99.04-2.85.18-.76 1.22-5.18 1.22-5.18s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.58 2.26-.87 3.52-.25 1.05.52 1.9 1.55 1.9 1.86 0 3.11-2.39 3.11-5.22 0-2.15-1.46-3.75-4.1-3.75-2.99 0-4.84 2.24-4.84 4.74 0 .86.25 1.47.65 1.94.18.21.2.3.14.54-.05.17-.15.59-.2.76-.07.25-.28.34-.5.25-1.39-.57-2.04-2.1-2.04-3.82 0-2.84 2.4-6.24 7.17-6.24 3.83 0 6.35 2.77 6.35 5.75 0 3.93-2.17 6.87-5.39 6.87-1.08 0-2.09-.58-2.44-1.24l-.66 2.52c-.24.92-.88 2.07-1.31 2.77.99.3 2.03.46 3.12.46 5.52 0 10-4.48 10-10S17.52 2 12 2z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="sns_btn" aria-label="KakaoTalk">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                    <path
+                                        d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.74 5.33 4.37 6.81L5.5 21l3.78-2.14C10.22 19.27 11.1 19.4 12 19.4c5.52 0 10-3.58 10-8.4S17.52 3 12 3z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 사업자 정보 -->
+                    <div class="footer_info">
+                        <h4>고객센터</h4>
+                        <p class="footer_tel">02-000-0000</p>
+                        <p class="footer_hours">평일 10:00 – 18:00 (주말·공휴일 휴무)</p>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="footer_newsletter">
+                        <h4>Newsletter</h4>
+                        <p>새로운 컬렉션과 특별한 소식을<br>가장 먼저 받아보세요.</p>
+                        <div class="newsletter_form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="button">Subscribe</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 사업자 등록 정보 -->
+                <div class="footer_biz">
+                    <p>상호명 : 엘리오르 &nbsp;|&nbsp; 대표 : 정지나 &nbsp;|&nbsp; 사업자등록번호 : 000-00-00000 &nbsp;|&nbsp; 통신판매업신고 :
+                        제2025-서울-00000호</p>
+                    <p>주소 : 서울특별시 강남구 청담동 000-00 &nbsp;|&nbsp; 이메일 : contact@elior.kr &nbsp;|&nbsp; 호스팅 서비스 : (주)엘리오르
+                    </p>
+                    <p>이 웹사이트는 포트폴리오용 웹사이트입니다.</p>
+                </div>
+
+                <div class="footer_bottom">
+                    <p class="copyright">© 2025 ÉLIOR. All rights reserved.</p>
+                    <div class="footer_policy">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보 처리방침</a>
+                        <a href="#">환불 및 교환 정책</a>
+                        <a href="#">법적 고지</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script>
+
+        // ── 메인비주얼 슬라이더 ──
+        const mvTrack = document.getElementById('mvTrack');
+        const mvProgress = document.getElementById('mvProgress');
+        const mvPrev = document.getElementById('mvPrev');
+        const mvNext = document.getElementById('mvNext');
+        const mvDots = document.querySelectorAll('.mv_dot');
+        const mvTotal = 2;
+        let mvCurrent = 0;
+        let mvTimer;
+        const MV_DURATION = 50000000;
+
+        function mvUpdateUI() {
+            mvTrack.style.transform = `translateX(-${mvCurrent * 100}%)`;
+            const isLight = mvCurrent === 1;
+            mvDots.forEach((d, i) => {
+                d.className = 'mv_dot' + (isLight ? ' on_light' : '') + (i === mvCurrent ? ' active' : '');
+            });
+            mvPrev.className = 'mv_arrow prev' + (isLight ? ' on_light' : '');
+            mvNext.className = 'mv_arrow next' + (isLight ? ' on_light' : '');
+        }
+
+        function mvResetProgress() {
+            mvProgress.style.transition = 'none';
+            mvProgress.style.width = '0%';
+            setTimeout(() => {
+                mvProgress.style.transition = `width ${MV_DURATION}ms linear`;
+                mvProgress.style.width = '100%';
+            }, 30);
+        }
+
+        function mvGoTo(idx) {
+            mvCurrent = (idx + mvTotal) % mvTotal;
+            mvUpdateUI();
+            mvResetProgress();
+        }
+
+        function mvStartAuto() {
+            clearInterval(mvTimer);
+            mvTimer = setInterval(() => mvGoTo(mvCurrent + 1), MV_DURATION);
+        }
+
+        mvDots.forEach(d => {
+            d.addEventListener('click', () => { mvGoTo(parseInt(d.dataset.index)); mvStartAuto(); });
+        });
+        mvPrev.addEventListener('click', () => { mvGoTo(mvCurrent - 1); mvStartAuto(); });
+        mvNext.addEventListener('click', () => { mvGoTo(mvCurrent + 1); mvStartAuto(); });
+
+        mvUpdateUI();
+        mvResetProgress();
+        mvStartAuto();
+
+
+        // ── 베스트셀러 슬라이더 ──
+        const itemList = document.querySelector(".item");
+        const items = document.querySelectorAll(".item li");
+        const bsPrev = document.querySelector(".prev_btn");
+        const bsNext = document.querySelector(".next_btn");
+
+        const visibleCount = 4;
+        let bsIndex = 0;
+
+        const itemWidth = items[0].offsetWidth;
+        const gap = 40;
+        const moveValue = (itemWidth + gap) * visibleCount;
+        const maxIndex = Math.ceil(items.length / visibleCount) - 1;
+
+        function updateSlider() {
+            itemList.style.transform = `translateX(-${bsIndex * moveValue}px)`;
+        }
+
+        bsNext.addEventListener("click", () => {
+            bsIndex = bsIndex < maxIndex ? bsIndex + 1 : 0;
+            updateSlider();
+        });
+
+        bsPrev.addEventListener("click", () => {
+            bsIndex = bsIndex > 0 ? bsIndex - 1 : maxIndex;
+            updateSlider();
+        });
+
+        // 햄버거 메뉴
+        const hamburger = document.getElementById('hamburger');
+        const gnb = document.querySelector('.gnb');
+
+        if (hamburger && gnb) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                gnb.classList.toggle('open');
+                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+            });
+
+            // 서브메뉴 토글
+            gnb.querySelectorAll('li > a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 430) {
+                        const sub = link.nextElementSibling;
+                        if (sub && sub.classList.contains('sub')) {
+                            e.preventDefault();
+                            link.parentElement.classList.toggle('sub_open');
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>
