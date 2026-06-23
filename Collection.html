@@ -13,6 +13,7 @@
 
 <body>
     <div id="wrap">
+        <!-- 헤더 -->
         <header id="eliorHeader">
             <div class="inner_box">
                 <h1 class="logo"><a href="index.html"><span>ÉLIOR</span></a></h1>
@@ -20,12 +21,12 @@
                     <li>
                         <a href="Collection.html">Collection</a>
                         <ul class="sub">
-                            <li><a href="collection.html?cat=necklace">Necklace</a></li>
-                            <li><a href="collection.html?cat=earring">Earring</a></li>
-                            <li><a href="collection.html?cat=ring">Ring</a></li>
-                            <li><a href="collection.html?cat=bracelet">Bracelet</a></li>
-                            <li><a href="collection.html?cat=watch">Watch</a></li>
-                            <li><a href="collection.html?cat=couple">Couple Sets</a></li>
+                            <li><a href="Collection.html?cat=necklace">Necklace</a></li>
+                            <li><a href="Collection.html?cat=earring">Earring</a></li>
+                            <li><a href="Collection.html?cat=ring">Ring</a></li>
+                            <li><a href="Collection.html?cat=bracelet">Bracelet</a></li>
+                            <li><a href="Collection.html?cat=watch">Watch</a></li>
+                            <li><a href="Collection.html?cat=couple">Couple Sets</a></li>
                         </ul>
                     </li>
                     <li>
@@ -88,6 +89,7 @@
             </div>
         </header>
 
+        <!-- 페이지 히어로 -->
         <section id="collection_hero">
             <div class="inner_box">
                 <div class="hero_left">
@@ -96,20 +98,22 @@
             </div>
         </section>
 
+        <!-- 카테고리 탭 -->
         <div id="category_tab">
             <div class="inner_box">
-                <a href="collection.html?cat=necklace" class="cat_btn" data-cat="necklace">Necklace</a>
-                <a href="collection.html?cat=earring" class="cat_btn" data-cat="earring">Earring</a>
-                <a href="collection.html?cat=ring" class="cat_btn" data-cat="ring">Ring</a>
-                <a href="collection.html?cat=bracelet" class="cat_btn" data-cat="bracelet">Bracelet</a>
-                <a href="collection.html?cat=watch" class="cat_btn" data-cat="watch">Watch</a>
-                <a href="collection.html?cat=couple" class="cat_btn" data-cat="couple">Couple Sets</a>
+                <a href="Collection.html?cat=necklace" class="cat_btn" data-cat="necklace">Necklace</a>
+                <a href="Collection.html?cat=earring" class="cat_btn" data-cat="earring">Earring</a>
+                <a href="Collection.html?cat=ring" class="cat_btn" data-cat="ring">Ring</a>
+                <a href="Collection.html?cat=bracelet" class="cat_btn" data-cat="bracelet">Bracelet</a>
+                <a href="Collection.html?cat=watch" class="cat_btn" data-cat="watch">Watch</a>
+                <a href="Collection.html?cat=couple" class="cat_btn" data-cat="couple">Couple Sets</a>
             </div>
         </div>
 
+        <!-- 툴바 -->
         <div id="collection_toolbar">
             <div class="inner_box">
-                <p class="toolbar_count">총 <span id="productCount">0</span>개의 상품</p>
+                <p class="toolbar_count">총 <span id="productCount">9</span>개의 상품</p>
                 <div class="toolbar_sort">
                     <label>정렬</label>
                     <select id="sortSelect">
@@ -122,14 +126,17 @@
             </div>
         </div>
 
+        <!-- 컬렉션 그리드 -->
         <section id="collection_main">
             <div class="inner_box">
                 <div class="collection_grid" id="collectionGrid"></div>
 
+                <!-- 페이지네이션 -->
                 <div class="collection_pagination" id="collectionPagination"></div>
             </div>
         </section>
 
+        <!-- 푸터 -->
         <footer id="footer">
             <div class="inner_box">
                 <div class="footer_top">
@@ -187,7 +194,6 @@
     </div>
 
     <script>
-        // ── 카드 생성 함수 (data-* 속성 추가로 안전성 확보) ──
         function createCard(item) {
             const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
             const isWished = wishlist.find(w => w.name === item.name);
@@ -200,39 +206,36 @@
                 ? `<span class="original">${item.originalPrice}</span>${item.price}`
                 : item.price;
 
-            const imgWrap = item.link ? `<a href="${item.link}">` : `<div>`;
+            const imgWrap = item.link
+                ? `<a href="${item.link}">`
+                : `<div>`;
             const imgWrapClose = item.link ? `</a>` : `</div>`;
 
-            // 중요: 버튼에 상품 데이터를 식별할 수 있는 정보를 JSON 문자열로 심어둡니다.
-            const itemData = encodeURIComponent(JSON.stringify(item));
-
             return `
-                <div class="product_card">
-                    ${imgWrap}
-                    <div class="card_img">
-                        <img src="${item.img}" alt="${item.name}">
-                        ${badge}
-                        <button class="card_wish" aria-label="위시리스트" data-item="${itemData}" style="color: ${isWished ? '#c9a96e' : ''}">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="${isWished ? '#c9a96e' : 'none'}" stroke="currentColor" stroke-width="1.5">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    ${imgWrapClose}
-                    <div class="card_info">
-                        <p class="card_name">${item.name}</p>
-                        <p class="card_price">${price}</p>
-                    </div>
-                </div>
-            `;
+        <div class="product_card">
+            ${imgWrap}
+            <div class="card_img">
+                <img src="${item.img}" alt="${item.name}">
+                ${badge}
+                <button class="card_wish" aria-label="위시리스트" style="color: ${isWished ? '#c9a96e' : ''}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="${isWished ? '#c9a96e' : 'none'}" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </button>
+            </div>
+            ${imgWrapClose}
+            <div class="card_info">
+                <p class="card_name">${item.name}</p>
+                <p class="card_price">${price}</p>
+            </div>
+        </div>
+    `;
         }
 
         // ── 초기화 ──
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat') || 'necklace';
-        
-        // 예외 처리: products 객체가 존재하고 해당 카테고리가 있는지 확인
-        const catProducts = (typeof products !== 'undefined' && products[cat]) ? products[cat] : [];
+        const catProducts = products[cat] || products.necklace;
 
         // 히어로 타이틀
         const titles = { necklace: 'Necklace', earring: 'Earring', ring: 'Ring', bracelet: 'Bracelet', watch: 'Watch', couple: 'Couple Sets' };
@@ -245,11 +248,7 @@
 
         // 그리드 렌더링
         const grid = document.getElementById('collectionGrid');
-        if (catProducts.length > 0) {
-            grid.innerHTML = catProducts.map(createCard).join('');
-        } else {
-            grid.innerHTML = '<p class="no_item" style="grid-column: 1/-1; text-align: center; padding: 50px 0;">등록된 상품이 없습니다.</p>';
-        }
+        grid.innerHTML = catProducts.map(createCard).join('');
         document.getElementById('productCount').textContent = catProducts.length;
 
         // ── 페이지네이션 ──
@@ -293,6 +292,15 @@
             pagination.appendChild(next);
         }
 
+        renderCards(1);
+
+        const noticeClose = document.getElementById('notice_close');
+        if (noticeClose) {
+            noticeClose.addEventListener('click', () => {
+                document.getElementById('notice_bar').style.display = 'none';
+            });
+        }
+
         // 위시리스트 저장/해제
         function toggleWish(btn, item) {
             const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
@@ -312,34 +320,26 @@
             localStorage.setItem('wishlist', JSON.stringify(wishlist));
         }
 
-        // 위시 버튼 이벤트 리스너 지정 (인덱스 버그 완전 수정)
+        // 위시 버튼 상태 초기화
         function initWishBtns() {
-            document.querySelectorAll('.card_wish').forEach((btn) => {
-                // 부가 속성에 저장해 둔 고유 item 데이터를 디코딩해 가져옵니다.
-                const itemData = btn.getAttribute('data-item');
-                if (!itemData) return;
-                const item = JSON.parse(decodeURIComponent(itemData));
-
+            const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            document.querySelectorAll('.product_card').forEach((card, i) => {
+                const item = catProducts[i];
+                if (!item) return;
+                const btn = card.querySelector('.card_wish');
+                if (wishlist.find(w => w.name === item.name)) {
+                    btn.style.color = '#c9a96e';
+                }
                 btn.addEventListener('click', (e) => {
-                    e.preventDefault();
                     e.stopPropagation();
                     toggleWish(btn, item);
                 });
             });
         }
 
-        // 초기 실행 순서 보장
+        // renderCards 호출 후 실행
         renderCards(1);
         initWishBtns();
-
-        // 공지사항 바 닫기 (안전 처리)
-        const noticeClose = document.getElementById('notice_close');
-        const noticeBar = document.getElementById('notice_bar');
-        if (noticeClose && noticeBar) {
-            noticeClose.addEventListener('click', () => {
-                noticeBar.style.display = 'none';
-            });
-        }
 
         // 햄버거 메뉴
         const hamburger = document.getElementById('hamburger');
@@ -353,7 +353,7 @@
             });
 
             // 서브메뉴 토글
-            gnb.querySelectorAll(':scope > li > a').forEach(link => {
+            gnb.querySelectorAll('> li > a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 430) {
                         const sub = link.nextElementSibling;
