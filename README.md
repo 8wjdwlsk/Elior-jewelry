@@ -5,7 +5,7 @@
 <br>
 
 ## Live Site
-(https://8wjdwlsk.github.io/elior-jewelry)
+(https://8wjdwlsk.github.io/Elior-jewelry)
 
 <br>
 
