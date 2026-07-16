@@ -14,6 +14,11 @@
     <div id="wrap">
         <header id="eliorHeader">
             <div class="inner_box">
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <h1 class="logo">
                     <a href="index.html"><span>ÉLIOR</span></a>
                 </h1>
@@ -59,11 +64,7 @@
                         <a href="Magazine.html">Magazine</a>
                     </li>
                 </ul>
-                <button class="hamburger" id="hamburger" aria-label="메뉴">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -462,7 +463,7 @@
             });
 
             // 서브메뉴 토글
-            gnb.querySelectorAll('> li > a').forEach(link => {
+            gnb.querySelectorAll('li > a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 430) {
                         const sub = link.nextElementSibling;

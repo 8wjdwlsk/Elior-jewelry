@@ -14,6 +14,11 @@
     <div id="wrap">
         <header id="eliorHeader">
             <div class="inner_box">
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <h1 class="logo">
                     <a href="index.html"><span>ÉLIOR</span></a>
                 </h1>
@@ -59,11 +64,6 @@
                         <a href="Magazine.html">Magazine</a>
                     </li>
                 </ul>
-                <button class="hamburger" id="hamburger" aria-label="메뉴">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -289,9 +289,9 @@
 
                 cards.forEach(card => {
                     if (filter === 'all' || card.dataset.category === filter) {
-                        // featured 클래스 있으면 grid-column 유지
                         card.style.display = 'block';
-                        card.style.gridColumn = card.classList.contains('featured') && filter === 'all' ? '1 / 3' : '';
+                        const isFeatured = card.classList.contains('featured') && filter === 'all';
+                        card.style.gridColumn = (isFeatured && window.innerWidth > 430) ? '1 / 3' : '';
                     } else {
                         card.style.display = 'none';
                     }
