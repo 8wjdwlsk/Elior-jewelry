@@ -66,7 +66,7 @@
                         <a href="Magazine.html">Magazine</a>
                     </li>
                 </ul>
-                
+
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -234,6 +234,9 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="scroll_indicator">
+                        <div class="scroll_indicator_bar" id="bestsellerBar"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -338,6 +341,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="scroll_indicator">
+                    <div class="scroll_indicator_bar" id="reviewBar"></div>
+                </div>
             </div>
         </section>
 
@@ -364,6 +370,9 @@
                     <div class="insta_item">
                         <img src="img/insta5.jpg" alt="Instagram 5">
                     </div>
+                </div>
+                <div class="scroll_indicator">
+                    <div class="scroll_indicator_bar" id="instaBar"></div>
                 </div>
                 <div class="insta_cta">
                     <a href="#">View on Instagram</a>
@@ -458,7 +467,7 @@
         let mvCurrent = 0;
         let mvTimer;
         const MV_DURATION = 5000;
-        
+
 
         function mvUpdateUI() {
             mvTrack.style.transform = `translateX(-${mvCurrent * 100}%)`;
@@ -528,6 +537,27 @@
             bsIndex = bsIndex > 0 ? bsIndex - 1 : maxIndex;
             updateSlider();
         });
+
+        function attachScrollIndicator(scrollEl, barEl) {
+            if (!scrollEl || !barEl) return;
+            const track = barEl.parentElement;
+
+            function update() {
+                const maxScroll = scrollEl.scrollWidth - scrollEl.clientWidth;
+                if (maxScroll <= 0) { track.style.display = 'none'; return; }
+                const maxTranslate = track.clientWidth - barEl.offsetWidth;
+                const ratio = scrollEl.scrollLeft / maxScroll;
+                barEl.style.transform = `translateX(${ratio * maxTranslate}px)`;
+            }
+
+            scrollEl.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        }
+
+        attachScrollIndicator(document.querySelector('.item'), document.getElementById('bestsellerBar'));
+        attachScrollIndicator(document.querySelector('.review_grid'), document.getElementById('reviewBar'));
+        attachScrollIndicator(document.querySelector('.insta_grid'), document.getElementById('instaBar'));
 
         // 햄버거 메뉴
         const hamburger = document.getElementById('hamburger');
