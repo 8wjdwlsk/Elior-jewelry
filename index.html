@@ -562,12 +562,24 @@
         // 햄버거 메뉴
         const hamburger = document.getElementById('hamburger');
         const gnb = document.querySelector('.gnb');
+        let scrollY = 0;   // 추가
 
         if (hamburger && gnb) {
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('open');
                 gnb.classList.toggle('open');
-                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+
+                if (gnb.classList.contains('open')) {
+                    scrollY = window.scrollY;
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${scrollY}px`;
+                    document.body.style.width = '100%';
+                } else {
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.width = '';
+                    window.scrollTo(0, scrollY);
+                }
             });
 
             // 서브메뉴 토글
@@ -575,9 +587,20 @@
                 link.addEventListener('click', (e) => {
                     if (window.innerWidth <= 430) {
                         const sub = link.nextElementSibling;
+
                         if (sub && sub.classList.contains('sub')) {
                             e.preventDefault();
-                            link.parentElement.classList.toggle('sub_open');
+
+                            const li = link.parentElement;
+                            li.classList.toggle('sub_open');
+
+                            // 메뉴가 열린 뒤 위치 다시 계산
+                            requestAnimationFrame(() => {
+                                li.scrollIntoView({
+                                    block: 'nearest',
+                                    behavior: 'smooth'
+                                });
+                            });
                         }
                     }
                 });
