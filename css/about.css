@@ -358,6 +358,7 @@ header .util_nav a svg {
     line-height: 2.1;
     color: #4a4238;
     letter-spacing: 0.03em;
+    word-break: keep-all;
 }
 
 .brand_values {
@@ -455,11 +456,12 @@ header .util_nav a svg {
 
 .craft_banner_desc {
     font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8a8078;
-    line-height: 2;
-    letter-spacing: 0.04em;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2.1;
+    color: #4a4238;
+    letter-spacing: 0.03em;
+    word-break: keep-all;
 }
 
 .craft_banner_img {
@@ -1363,24 +1365,24 @@ header .util_nav a svg {
     }
 
     .newsletter_form {
-    max-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
 
-.newsletter_form input {
-    min-width: 0;
-    padding: 12px 10px;
-    font-size: 11px;
-}
+    .newsletter_form input {
+        min-width: 0;
+        padding: 12px 10px;
+        font-size: 11px;
+    }
 
-.newsletter_form button {
-    padding: 12px 14px;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    flex-shrink: 0;
-}
+    .newsletter_form button {
+        padding: 12px 14px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        flex-shrink: 0;
+    }
 
     .footer_bottom .footer_policy {
         flex-wrap: wrap;
@@ -1396,8 +1398,8 @@ header .util_nav a svg {
     }
 
     .inner_box.one {
-    padding: 0 0;
-  }
+        padding: 0 0;
+    }
 
     /* 레이아웃 */
     #about_wrap {
@@ -1416,7 +1418,7 @@ header .util_nav a svg {
     .sidebar_label {
         padding: 0 35px;
         font-size: 20px;
-        margin-bottom: 8px;
+        margin-bottom:16px;
     }
 
     .sidebar_nav {
@@ -1434,7 +1436,6 @@ header .util_nav a svg {
         padding: 12px 16px;
         white-space: nowrap;
         font-size: 14px;
-        border-bottom: 2px solid transparent;
         gap: 0;
     }
 
@@ -1458,7 +1459,7 @@ header .util_nav a svg {
     .brand_story_lead {
         font-size: 16px;
         padding-left: 20px;
-        margin-bottom: 32px;
+        word-break: keep-all;
     }
 
     .brand_story_body {
@@ -1469,6 +1470,11 @@ header .util_nav a svg {
     .story_row {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .story_text{
+        word-break: keep-all;
+        margin-bottom: 16px;
     }
 
     .story_row.reverse {
@@ -1563,7 +1569,7 @@ header .util_nav a svg {
     }
 
     .craft_banner_title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .craft_banner_desc {
