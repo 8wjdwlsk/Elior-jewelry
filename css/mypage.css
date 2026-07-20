@@ -313,10 +313,6 @@ header .util_nav a svg {
 }
 
 /* ── 위시리스트 ── */
-.wishlist_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
 
 .wish_card {
     position: relative;
@@ -655,7 +651,7 @@ header .util_nav a svg {
     padding: 16px 48px;
     cursor: pointer;
     transition: background 0.3s;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .form_submit:hover {
@@ -803,14 +799,16 @@ header .util_nav a svg {
 .add_btn {
     font-family: 'Cormorant Garamond', 'Noto Sans KR', sans-serif;
     font-size: 13px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: #1e1a17;
     background: #fff;
     border: 1px solid #1e1a17;
-    padding: 14px 36px;
+    padding: 16px 48px;
     cursor: pointer;
     transition: all 0.3s;
+    transition: background 0.3s;
+    align-self: center;
 }
 
 .add_btn:hover {
@@ -871,6 +869,7 @@ header .util_nav a svg {
     line-height: 1.9;
     letter-spacing: 0.03em;
     margin-bottom: 16px;
+    word-break: keep-all;
 }
 
 .review_actions {
@@ -926,6 +925,7 @@ header .util_nav a svg {
     color: #1e1a17;
     flex: 1;
     letter-spacing: 0.02em;
+    word-break: keep-all;
 }
 
 .inquiry_date {
@@ -1566,11 +1566,8 @@ header .util_nav a svg {
     }
 
     .sidebar_nav {
-        display: flex;
-        overflow-x: auto;
         scrollbar-width: none;
         padding: 0 20px;
-        gap: 0;
         margin: 0;
     }
 
@@ -1726,6 +1723,7 @@ header .util_nav a svg {
     .form_submit {
         padding: 14px 36px;
         font-size: 12px;
+        align-self: stretch;
     }
 
     /* 쿠폰/포인트 */
@@ -1791,6 +1789,8 @@ header .util_nav a svg {
     .add_btn {
         padding: 12px 28px;
         font-size: 12px;
+        align-self: center;
+
     }
 
     /* 리뷰 */
@@ -1809,7 +1809,7 @@ header .util_nav a svg {
     /* 1:1 문의 */
     .inquiry_item {
         padding: 14px 16px;
-        gap: 10px;
+        gap: 20px;
         flex-wrap: wrap;
     }
 
