@@ -1550,6 +1550,10 @@ header .util_nav a svg {
     word-break: keep-all;
   }
 
+  .inner_box.one {
+    padding: 0 0;
+  }
+
   /* 메인 비주얼 */
   #mainVisual {
     height: 75svh;

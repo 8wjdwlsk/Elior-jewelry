@@ -937,8 +937,9 @@ header .util_nav a svg {
 
     /* ── 헤더 ── */
     header .inner_box {
-        padding: 0 40px;
-        height: 70px;
+        padding: 0 24px;
+        gap: 20px;
+        overflow: hidden;
     }
 
     header .logo a {
@@ -1226,7 +1227,7 @@ header .util_nav a svg {
     .footer_top {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 40px 20px 40px;
+        padding: 40px 0 40px;
         text-align: center;
     }
 
@@ -1259,7 +1260,6 @@ header .util_nav a svg {
     }
 
     .footer_hours {
-        max-width: 240px;
         margin: 0 auto;
     }
 
@@ -1279,6 +1279,10 @@ header .util_nav a svg {
         line-height: 1.8;
         word-break: keep-all;
     }
+
+    .inner_box.one {
+    padding: 0 0;
+  }
 
     /* 히어로 */
     #cart_hero {

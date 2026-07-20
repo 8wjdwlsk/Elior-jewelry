@@ -485,7 +485,7 @@ header .util_nav a svg {
     font-size: 14px;
     color: #8a8078;
     line-height: 1.7;
-    margin-bottom: 80px;
+    margin-bottom: 36px;
 }
 
 .explain {
@@ -1049,8 +1049,9 @@ header .util_nav a svg {
 
     /* ── 헤더 ── */
     header .inner_box {
-        padding: 0 40px;
-        height: 70px;
+        padding: 0 24px;
+        gap: 20px;
+        overflow: hidden;
     }
 
     header .logo a {
@@ -1364,7 +1365,7 @@ header .util_nav a svg {
     .footer_top {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 40px 20px 40px;
+        padding: 40px 0 40px;
         text-align: center;
     }
 
@@ -1397,7 +1398,6 @@ header .util_nav a svg {
     }
 
     .footer_hours {
-        max-width: 240px;
         margin: 0 auto;
     }
 
@@ -1417,6 +1417,10 @@ header .util_nav a svg {
         line-height: 1.8;
         word-break: keep-all;
     }
+
+    .inner_box.one {
+    padding: 0 0;
+  }
 
     /* 브레드크럼 */
     #breadcrumb {
@@ -1540,20 +1544,17 @@ header .util_nav a svg {
         padding-left: 0;
     }
 
-    /* 구매 패널 — 하단 고정 */
     .info_right {
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        position: static;
         width: 100%;
         height: auto;
-        top: auto;
         border-left: none;
         border-top: 1px solid #ede9e3;
-        background: #fff;
-        z-index: 100;
-        box-shadow: 0 -4px 20px rgba(30, 26, 23, 0.08);
+        border-bottom: 1px solid #ede9e3;
+        background: #FAF8F5;
+        box-shadow: none;
         overflow-y: visible;
+        margin-bottom: 36px;
     }
 
     .purchase_panel {
