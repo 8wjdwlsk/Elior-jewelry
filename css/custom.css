@@ -294,6 +294,7 @@ header .util_nav a svg {
     line-height: 2.1;
     letter-spacing: 0.03em;
     margin-bottom: 72px;
+    word-break: keep-all;
 }
 
 .process_steps {
@@ -339,6 +340,7 @@ header .util_nav a svg {
     color: #8a8078;
     line-height: 2;
     letter-spacing: 0.03em;
+    word-break: keep-all;
 }
 
 .process_info .process_tag {
@@ -354,10 +356,12 @@ header .util_nav a svg {
 /* ── 커스텀 요청서 ── */
 .request_intro {
     font-family: 'Noto Serif KR', serif;
-    font-size: 16px;
-    color: #8a8078;
-    line-height: 2;
-    margin-bottom: 48px;
+    font-size: 17px;
+    color: #4a4238;
+    line-height: 2.1;
+    letter-spacing: 0.03em;
+    margin-bottom: 72px;
+    word-break: keep-all;
 }
 
 .request_form {
@@ -399,6 +403,7 @@ header .util_nav a svg {
     outline: none;
     transition: border-color 0.25s;
     appearance: none;
+    word-break: keep-all;
 }
 
 .form_group input:focus,
@@ -424,6 +429,7 @@ header .util_nav a svg {
     color: #b8a898;
     letter-spacing: 0.05em;
     line-height: 1.9;
+    word-break: keep-all;
 }
 
 .form_submit {
@@ -437,7 +443,7 @@ header .util_nav a svg {
     padding: 18px 56px;
     cursor: pointer;
     transition: background 0.3s;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .form_submit:hover {
@@ -496,6 +502,7 @@ header .util_nav a svg {
     padding: 28px 24px;
     cursor: pointer;
     transition: border-color 0.25s, background 0.25s;
+    word-break: keep-all;
 }
 
 .option_card:hover {
@@ -522,14 +529,7 @@ header .util_nav a svg {
     font-size: 14px;
     color: #8a8078;
     line-height: 1.8;
-}
-
-.option_card {
-    font-family: 'Playfair Display', 'Noto Serif KR', serif;
-    font-size: 13px;
-    color: #c9a96e;
-    letter-spacing: 0.08em;
-    margin-top: 12px;
+    word-break: keep-all;
 }
 
 .option_desc {
@@ -541,15 +541,18 @@ header .util_nav a svg {
     padding: 24px;
     background: #FAF8F5;
     border-left: 2px solid #c9a96e;
+    word-break: keep-all;
 }
 
 /* ── 사이즈 가이드 ── */
 .size_intro {
     font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-    font-size: 16px;
-    color: #8a8078;
-    line-height: 2;
-    margin-bottom: 48px;
+    font-size: 17px;
+    color: #4a4238;
+    line-height: 2.1;
+    letter-spacing: 0.03em;
+    margin-bottom: 72px;
+    word-break: keep-all;
 }
 
 .size_method {
@@ -563,6 +566,7 @@ header .util_nav a svg {
     padding: 36px 32px;
     background: #FAF8F5;
     border-top: 2px solid #c9a96e;
+    word-break: keep-all;
 }
 
 .size_method_item h4 {
@@ -637,15 +641,18 @@ header .util_nav a svg {
     line-height: 2;
     padding: 20px 24px;
     border: 1px solid #ede9e3;
+    word-break: keep-all;
 }
 
 /* ── 작업 사례 ── */
 .case_intro {
     font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-    font-size: 16px;
-    color: #8a8078;
-    line-height: 2;
-    margin-bottom: 48px;
+    font-size: 17px;
+    color: #4a4238;
+    line-height: 2.1;
+    letter-spacing: 0.03em;
+    margin-bottom: 72px;
+    word-break: keep-all;
 }
 
 .case_grid {
@@ -1404,8 +1411,8 @@ header .logo {
 
     /* 요청서 */
     .request_intro {
-        font-size: 13px;
-        margin-bottom: 28px;
+        font-size: 14px;
+        margin-bottom: 40px;
     }
 
     .form_row {
@@ -1468,6 +1475,11 @@ header .logo {
     }
 
     /* 사이즈 가이드 */
+    .size_intro{
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
     .size_method {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1501,6 +1513,10 @@ header .logo {
     }
 
     /* 작업 사례 */
+    .case_intro{
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
     .case_grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px 12px;
