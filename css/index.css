@@ -1566,7 +1566,7 @@ header .util_nav a svg {
     overflow-wrap: break-word;
   }
 
-  .mv_sub {
+  .mv_sub.mv_btn.dark {
     font-size: 13px;
     margin-bottom: 24px;
     word-break: keep-all;
