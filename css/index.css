@@ -7,6 +7,10 @@
 
 }
 
+.scroll_indicator {
+  display: none;
+}
+
 /* header */
 header {
   width: 100%;
@@ -1032,6 +1036,25 @@ header .util_nav a svg {
     padding: 0 40px;
   }
 
+  .scroll_indicator {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ede9e3;
+    border-radius: 3px;
+    margin: 20px auto 0;
+    overflow: hidden;
+  }
+
+  .scroll_indicator_bar {
+    height: 100%;
+    width: 30%;
+    background: #c9a96e;
+    border-radius: 3px;
+    transform: translateX(0);
+  }
+
+
   /* ── 헤더 ── */
   header .inner_box {
     padding: 0 24px;
@@ -1305,10 +1328,12 @@ header .util_nav a svg {
     align-items: center;
     justify-content: unset;
   }
-header .logo {
+
+  header .logo {
     justify-self: center;
     text-align: center;
   }
+
   header .logo a {
     font-size: 22px;
     letter-spacing: 3px;
@@ -1318,24 +1343,24 @@ header .logo {
   header .gnb {
     display: none;
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: calc(100dvh - 120px);
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
-    justify-content:flex-start;
-    padding: 100px 40px 40px;
-    gap: 0;
-    z-index: 999;
+    justify-content: flex-start;
+    padding: 20px 40px 80px;
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    z-index: 999;
+    touch-action: pan-y;
   }
 
   header .gnb.open {
     display: flex;
-    height: 820px;
   }
 
   header .gnb>li>a {
@@ -1358,6 +1383,7 @@ header .logo {
 
 
   /* 서브메뉴 */
+
   header .gnb .sub {
     position: static;
     border: none;
@@ -1368,6 +1394,7 @@ header .logo {
     overflow: hidden;
     opacity: 0;
     transform: translateX(-24px);
+    overflow-y: auto;
     transition: max-height 0.35s ease, transform 0.35s ease, opacity 0.3s ease;
   }
 
@@ -1408,7 +1435,6 @@ header .logo {
     background: none;
     border: none;
     z-index: 1000;
-    justify-self: start;
   }
 
   .hamburger span {
@@ -1463,6 +1489,7 @@ header .logo {
   #footer {
     padding-top: 40px;
   }
+
   .footer_top {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1525,9 +1552,15 @@ header .logo {
     height: 75svh;
   }
 
+  .mv_text {
+    padding: 0 28px;
+  }
+
   .mv_title {
     font-size: 28px;
     letter-spacing: 0.03em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   .mv_sub {

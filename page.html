@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉLIOR — Muse Pearl Necklace</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+
+
+<body>
+
+    <div id="wrap">
+        <header id="eliorHeader">
+            <div class="inner_box">
+                <button class="hamburger" id="hamburger" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1 class="logo"><a href="index.html"><span>ÉLIOR</span></a></h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="collection.html">Collection</a>
+                        <ul class="sub">
+                            <li><a href="collection.html?cat=necklace">Necklace</a></li>
+                            <li><a href="collection.html?cat=earring">Earring</a></li>
+                            <li><a href="collection.html?cat=ring">Ring</a></li>
+                            <li><a href="collection.html?cat=bracelet">Bracelet</a></li>
+                            <li><a href="collection.html?cat=watch">Watch</a></li>
+                            <li><a href="collection.html?cat=couple">Couple Sets</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                        <ul class="sub">
+                            <li><a href="about.html?tab=brand">Brand Story</a></li>
+                            <li><a href="about.html?tab=craft">장인정신</a></li>
+                            <li><a href="about.html?tab=atelier">아틀리에</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="custom.html">Custom</a>
+                        <ul class="sub">
+                            <li><a href="custom.html?tab=process">진행 방식</a></li>
+                            <li><a href="custom.html?tab=request">커스텀 요청서</a></li>
+                            <li><a href="custom.html?tab=option">커스텀 옵션</a></li>
+                            <li><a href="custom.html?tab=size">사이즈 가이드</a></li>
+                            <li><a href="custom.html?tab=case">커스텀 작업 사례</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                        <ul class="sub">
+                            <li><a href="contact.html?tab=inquiry">상품 문의</a></li>
+                            <li><a href="contact.html?tab=faq">자주 묻는 질문</a></li>
+                            <li><a href="contact.html?tab=visit">방문 예약</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="magazine.html">Magazine</a>
+                    </li>
+                </ul>
+                
+                <div class="util_nav">
+                    <a href="#" aria-label="검색">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <circle cx="11" cy="11" r="7" />
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                        </svg>
+                    </a>
+                    <a href="mypage.html" aria-label="마이페이지">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                        </svg>
+                    </a>
+                    <a href="cart.html" aria-label="장바구니">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 01-8 0" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div id="breadcrumb">
+            <div class="inner_box">
+                <a href="index.html" class="breadcrumb_item">Home</a>
+                <span class="breadcrumb_sep">›</span>
+                <a href="collection.html?cat=necklace" class="breadcrumb_item">Necklace</a>
+                <span class="breadcrumb_sep">›</span>
+                <span class="breadcrumb_item current">Horsebit Necklace</span>
+            </div>
+        </div>
+
+        <!-- 갤러리 -->
+        <section id="product_gallery">
+            <div class="inner_box">
+                <div class="gallery_main">
+                    <img src="img/page2.jpg" alt="Horsebit Necklace" id="mainImg">
+
+                    <div class="gallery_thumbs">
+                        <div class="gallery_thumb active" data-src="img/page2.jpg">
+                            <img src="img/page2.jpg" alt="">
+                        </div>
+                        <div class="gallery_thumb" data-src="img/page1.jpg">
+                            <img src="img/page1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상품 정보 -->
+        <section id="product_info">
+            <div class="inner_box">
+
+                <!-- 왼쪽 -->
+                <div class="info_left">
+                    <span class="product_category">Necklace · 18K Gold</span>
+                    <h1 class="product_title">Horsebit <em>Necklace</em></h1>
+                    <div class="product_price_wrap">
+                        <span class="product_price">557,000원</span>
+                    </div>
+
+                    <!-- 제품 설명  -->
+                    <div class="explanation">
+                        <span class="block_title">제품 설명</span>
+                        <div class="explain">
+                            <p>홀스빗 모티브는 다양하면서도 세련된 비율로 선보입니다. 펜던트 네크리스의 옐로우 골드 버전은 승마에서 영감을 받은 디테일에 다이아몬드를 더해 반짝이는 느낌을
+                                더합니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 소재 & 스펙 -->
+                    <div class="section_block">
+                        <span class="block_title">소재 & 스펙</span>
+                        <div class="material_grid">
+                            <div class="material_item">
+                                <h5>소재</h5>
+                                <p>18K 골드 체인<br>다이아몬드</p>
+                            </div>
+                            <div class="material_item">
+                                <h5>길이</h5>
+                                <p>42cm / 45cm / 50cm<br>연장 체인 5cm 포함</p>
+                            </div>
+                            <div class="material_item">
+                                <h5>무게</h5>
+                                <p>약 4.8g</p>
+                            </div>
+                            <div class="material_item">
+                                <h5>다이아몬드</h5>
+                                <p>화이트 다이아몬드 19개, 약 0.213캐럿</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 케어 가이드 -->
+                    <div class="section_block">
+                        <span class="block_title">케어 가이드</span>
+                        <div class="care_list">
+                            <p class="care_item">착용 후 부드러운 천으로 닦아 보관해주세요.</p>
+                            <p class="care_item">향수, 로션 도포 후 착용을 삼가주세요. 진주 광택이 손상될 수 있습니다.</p>
+                            <p class="care_item">개별 파우치에 보관하여 다른 주얼리와 마찰을 피해주세요.</p>
+                            <p class="care_item">수영, 샤워 시 착용을 피해주세요.</p>
+                        </div>
+                    </div>
+
+                    <!-- 고객 리뷰 -->
+                    <div class="section_block">
+                        <span class="block_title">고객 리뷰</span>
+                        <div class="review_summary">
+                            <p class="review_avg">4.9</p>
+                            <div>
+                                <p class="review_stars_big">★★★★★</p>
+                                <p class="review_count">리뷰 128개</p>
+                            </div>
+                        </div>
+                        <div class="review_list">
+                            <div class="review_card">
+                                <div class="review_top">
+                                    <div class="reviewer_info_wrap">
+                                        <div class="reviewer_av">J</div>
+                                        <div>
+                                            <p class="r_name">Jiyeon K.</p>
+                                        </div>
+                                    </div>
+                                    <p class="r_stars">★★★★★</p>
+                                </div>
+                                <p class="review_text_wrap">처음 받아봤을 때 패키지부터 굉장히 인상 깊었어요. 데일리로 착용해도 예쁘고 중요한 자리에서도 잘 어울려요.
+                                    체인도 섬세해서 고급스러운 느낌이 나요. 저는 매일 착용하고 있는데 전혀 질리지 않아요.</p>
+                            </div>
+                            <div class="review_card">
+                                <div class="review_top">
+                                    <div class="reviewer_info_wrap">
+                                        <div class="reviewer_av">S</div>
+                                        <div>
+                                            <p class="r_name">Soyeon P.</p>
+                                        </div>
+                                    </div>
+                                    <p class="r_stars">★★★★★</p>
+                                </div>
+                                <p class="review_text_wrap">결혼기념일 선물로 받았는데 너무 예뻐요. 42cm로 주문했는데 딱 좋은 길이예요. 다이아가 작게 박혀있는게
+                                    정말 특별해요.</p>
+                            </div>
+                            <div class="review_card">
+                                <div class="review_top">
+                                    <div class="reviewer_info_wrap">
+                                        <div class="reviewer_av">M</div>
+                                        <div>
+                                            <p class="r_name">Minha L.</p>
+                                        </div>
+                                    </div>
+                                    <p class="r_stars">★★★★☆</p>
+                                </div>
+                                <p class="review_text_wrap">생각보다 사이즈가 작아서 놀랐어요. 그래도 전체적인 완성도가 높아서 만족합니다.
+                                    포장도 너무 예뻐서 선물용으로 딱이에요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽 고정 패널 -->
+                <div class="info_right">
+                    <div class="purchase_panel">
+
+                        <div class="option_group">
+                            <span class="option_label">길이 선택</span>
+                            <div class="option_btns">
+                                <button class="option_btn active">42cm</button>
+                                <button class="option_btn">45cm</button>
+                                <button class="option_btn">50cm</button>
+                            </div>
+                        </div>
+
+                        <div class="option_group">
+                            <span class="option_label">소재 선택</span>
+                            <div class="material_btns">
+                                <div class="material_btn active">
+                                    <div class="material_swatch"
+                                        style="background:linear-gradient(135deg,#e8c96e,#c9a946);"></div>
+                                    <span>14K 골드</span>
+                                </div>
+                                <div class="material_btn">
+                                    <div class="material_swatch"
+                                        style="background:linear-gradient(135deg,#e8d4c8,#d4b8a8);"></div>
+                                    <span>로즈골드</span>
+                                </div>
+                                <div class="material_btn">
+                                    <div class="material_swatch"
+                                        style="background:linear-gradient(135deg,#e8e8e8,#c8c8c8);"></div>
+                                    <span>실버</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="qty_group">
+                            <div class="qty_wrap">
+                                <button class="qty_btn" id="qtyMinus">−</button>
+                                <input type="number" class="qty_num" id="qtyNum" value="1" min="1" max="99">
+                                <button class="qty_btn" id="qtyPlus">+</button>
+                            </div>
+                            <span class="qty_price" id="qtyPrice">557,000원</span>
+                        </div>
+
+                        <button class="btn_cart" id="addToCart">장바구니 담기</button>
+                        <button class="btn_wish" id="wishBtn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" id="wishIcon">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                            위시리스트 담기
+                        </button>
+
+                        <div class="panel_info">
+                            <div class="panel_info_item">
+                                전 상품 무료 배송
+                            </div>
+                            <div class="panel_info_item">
+                                30일 교환 · 환불 보장
+                            </div>
+                            <div class="panel_info_item">
+                                정품 보증서 동봉
+                            </div>
+                            <div class="panel_info_item">
+                                ÉLIOR 시그니처 박스 포장
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer id="footer">
+            <div class="inner_box">
+                <div class="footer_top">
+                    <div class="footer_brand">
+                        <a href="index.html" class="footer_logo">ÉLIOR</a>
+                        <p>Inspired by French minimalism.<br>Crafted for those who find beauty<br>in quiet, lasting
+                            things.</p>
+                        <div class="footer_sns">
+                            <a href="#" class="sns_btn" aria-label="Instagram">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                                </svg>
+                            </a>
+                            <a href="#" class="sns_btn" aria-label="KakaoTalk">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                    <path
+                                        d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.74 5.33 4.37 6.81L5.5 21l3.78-2.14C10.22 19.27 11.1 19.4 12 19.4c5.52 0 10-3.58 10-8.4S17.52 3 12 3z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <h4>고객센터</h4>
+                        <p class="footer_tel">02-000-0000</p>
+                        <p class="footer_hours">평일 10:00 – 18:00<br>(주말·공휴일 휴무)</p>
+                        <a href="#" class="footer_kakao">카카오톡 채널 문의</a>
+                    </div>
+                    <div class="footer_newsletter">
+                        <h4>Newsletter</h4>
+                        <p>새로운 컬렉션과 특별한 소식을<br>가장 먼저 받아보세요.</p>
+                        <div class="newsletter_form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_biz">
+                    <p>상호명 : 엘리오르 &nbsp;|&nbsp; 대표 : 홍길동 &nbsp;|&nbsp; 사업자등록번호 : 000-00-00000 &nbsp;|&nbsp; 통신판매업신고 :
+                        제2025-서울-00000호</p>
+                    <p>주소 : 서울특별시 강남구 청담동 000-00 &nbsp;|&nbsp; 이메일 : contact@elior.kr</p>
+                </div>
+                <div class="footer_bottom">
+                    <p class="copyright">© 2025 ÉLIOR. All rights reserved.</p>
+                    <div class="footer_policy">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보 처리방침</a>
+                        <a href="#">환불 및 교환 정책</a>
+                        <a href="#">법적 고지</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const noticeClose = document.getElementById('notice_close');
+        if (noticeClose) noticeClose.addEventListener('click', () => { document.getElementById('notice_bar').style.display = 'none'; });
+
+        // 갤러리
+        document.querySelectorAll('.gallery_thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                document.querySelectorAll('.gallery_thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                document.getElementById('mainImg').src = thumb.dataset.src;
+            });
+        });
+
+        // 옵션
+        document.querySelectorAll('.option_btns').forEach(group => {
+            group.querySelectorAll('.option_btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    group.querySelectorAll('.option_btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        });
+
+        document.querySelectorAll('.material_btns').forEach(group => {
+            group.querySelectorAll('.material_btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    group.querySelectorAll('.material_btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        });
+
+        // 수량
+        const basePrice = 57000;
+        const qtyNum = document.getElementById('qtyNum');
+        const qtyPrice = document.getElementById('qtyPrice');
+
+        function updatePrice() {
+            qtyPrice.textContent = (basePrice * (parseInt(qtyNum.value) || 1)).toLocaleString() + '원';
+        }
+
+        document.getElementById('qtyMinus').addEventListener('click', () => { if (parseInt(qtyNum.value) > 1) { qtyNum.value--; updatePrice(); } });
+        document.getElementById('qtyPlus').addEventListener('click', () => { qtyNum.value++; updatePrice(); });
+        qtyNum.addEventListener('change', () => { if (parseInt(qtyNum.value) < 1) qtyNum.value = 1; updatePrice(); });
+
+        // 장바구니
+        document.getElementById('addToCart').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const qty = parseInt(qtyNum.value);
+            const existing = cart.find(i => i.name === 'Muse Pearl Necklace');
+            if (existing) { existing.qty += qty; } else {
+                cart.push({ name: 'Muse Pearl Necklace', price: basePrice, qty, img: 'img/Pearl Line.jpg', material: '14K 골드 · 담수진주' });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('장바구니에 담았습니다!');
+        });
+
+        // 위시리스트
+        const wishBtn = document.getElementById('wishBtn');
+        const wishIcon = document.getElementById('wishIcon');
+        const wishItem = { name: 'Muse Pearl Necklace', price: '57,000원', img: 'img/Pearl Line.jpg' };
+
+        function initWish() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            if (wishlist.find(w => w.name === wishItem.name)) {
+                wishBtn.classList.add('wished');
+                wishIcon.setAttribute('fill', '#c9a96e');
+            }
+        }
+
+        wishBtn.addEventListener('click', () => {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            const idx = wishlist.findIndex(w => w.name === wishItem.name);
+            if (idx === -1) { wishlist.push(wishItem); wishBtn.classList.add('wished'); wishIcon.setAttribute('fill', '#c9a96e'); }
+            else { wishlist.splice(idx, 1); wishBtn.classList.remove('wished'); wishIcon.setAttribute('fill', 'none'); }
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        });
+
+        initWish();
+
+        // 햄버거 메뉴
+        const hamburger = document.getElementById('hamburger');
+        const gnb = document.querySelector('.gnb');
+
+        if (hamburger && gnb) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                gnb.classList.toggle('open');
+                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+            });
+
+            // 서브메뉴 토글
+            gnb.querySelectorAll('li > a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 430) {
+                        const sub = link.nextElementSibling;
+                        if (sub && sub.classList.contains('sub')) {
+                            e.preventDefault();
+                            link.parentElement.classList.toggle('sub_open');
+                        }
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
