@@ -1560,7 +1560,7 @@ header .util_nav a svg {
   }
 
   .mv_title {
-    font-size: 28px;
+    font-size: 30px;
     letter-spacing: 0.03em;
     word-break: keep-all;
     overflow-wrap: break-word;
@@ -1588,6 +1588,15 @@ header .util_nav a svg {
   .slide1 figure img {
     object-fit: cover;
     object-position: center;
+  }
+
+  .mv_label.dark{
+    padding-bottom: 15px;
+  }
+
+  .mv_sub .dark{
+    font-size: 13px;
+    word-break: keep-all;
   }
 
   /* 슬라이드 2 링 크기 축소 */
