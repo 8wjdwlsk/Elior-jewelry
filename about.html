@@ -64,7 +64,7 @@
                         <a href="magazine.html">Magazine</a>
                     </li>
                 </ul>
-                
+
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -137,8 +137,8 @@
                             <div class="story_text">
                                 <h4 class="story_sub">Brand Origin</h4>
                                 <p>ÉLIOR는 2018년, 파리의 작은 아틀리에에서 시작되었습니다. </p>
-                                <p>창립자는 프랑스 유학 시절 접한 미니멀리즘과 한국 전통 공예의 섬세함을 결합해</p>
-                                <p>시간이 지나도 변하지 않는 주얼리를 만들고자 했습니다.</p>
+                                <p>창립자는 프랑스 유학 시절 접한 미니멀리즘과 한국 전통 공예의 섬세함을 결합해
+                                시간이 지나도 변하지 않는 주얼리를 만들고자 했습니다.</p>
                             </div>
                             <div class="story_img">
                                 <img src="img/브랜드1.jpg" alt="">
@@ -149,8 +149,8 @@
                                 <h4 class="story_sub">Our Philosophy</h4>
                                 <p>우리는 매 시즌 트렌드를 좇지 않습니다. </p>
                                 <p>대신 10년 후에도, 20년 후에도 여전히 아름다울 디자인에 집중합니다.</p>
-                                <p>빠르게 소비되는 패스트 패션 시대에</p>
-                                <p>ÉLIOR는 천천히 그리고 오래가는 아름다움을 만듭니다.</p>
+                                <p>빠르게 소비되는 패스트 패션 시대에
+                                ÉLIOR는 천천히 그리고 오래가는 아름다움을 만듭니다.</p>
                             </div>
                             <div class="story_img">
                                 <img src="img/브랜드2.jpg" alt="">
@@ -181,13 +181,15 @@
                         <div class="craft_banner_text">
                             <p class="craft_banner_sub">Our Promise</p>
                             <h3 class="craft_banner_title">장인들의 손끝에서 완성되는 아름다움</h3>
-                            <p class="craft_banner_desc">프랑스·이탈리아의 현대적<br>
-                                주얼리 기법을 접목해 각자의 분야에서 최고의 기술을 갈고닦아 왔습니다.<br><br>
-                                금속 성형, 스톤 세팅, 마감 처리 — 각 공정마다<br>
-                                전문 장인이 투입되며, 단 하나의 피스를 완성하기 위해<br>
-                                여러 장인의 손길이 함께합니다.<br><br>
-                                빠른 생산보다 완벽한 완성을 택하는 것,<br>
+                            <p class="craft_banner_desc">프랑스·이탈리아의 현대적
+                                주얼리 기법을 접목해 각자의 분야에서 최고의 기술을 갈고닦아 왔습니다.
+                            <p class="craft_banner_desc">
+                                금속 성형, 스톤 세팅, 마감 처리 등 각 공정마다
+                                전문 장인이 투입되며, 단 하나의 피스를 완성하기 위해
+                                여러 장인의 손길이 함께합니다.</p>
+                            <p class="craft_banner_desc">빠른 생산보다 완벽한 완성을 택하는 것,
                                 그것이 ÉLIOR 장인들이 지켜온 하나의 약속입니다.</p>
+                            </p>
                         </div>
                         <div class="craft_banner_img">
                             <img src="img/장인4.jpg" alt="">
@@ -382,24 +384,51 @@
         const gnb = document.querySelector('.gnb');
 
         if (hamburger && gnb) {
+
             hamburger.addEventListener('click', () => {
+
                 hamburger.classList.toggle('open');
                 gnb.classList.toggle('open');
-                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+
+                if (gnb.classList.contains('open')) {
+                    // 배경 페이지만 스크롤 막기
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+
             });
 
             // 서브메뉴 토글
             gnb.querySelectorAll('li > a').forEach(link => {
+
                 link.addEventListener('click', (e) => {
+
                     if (window.innerWidth <= 430) {
+
                         const sub = link.nextElementSibling;
+
                         if (sub && sub.classList.contains('sub')) {
+
                             e.preventDefault();
-                            link.parentElement.classList.toggle('sub_open');
+
+                            const li = link.parentElement;
+                            li.classList.toggle('sub_open');
+
+                            // 펼쳐진 메뉴가 보이도록 살짝 이동
+                            setTimeout(() => {
+                                li.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "nearest"
+                                });
+                            }, 100);
                         }
                     }
+
                 });
+
             });
+
         }
     </script>
 </body>
