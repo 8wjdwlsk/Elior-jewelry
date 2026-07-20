@@ -971,7 +971,7 @@ header .util_nav a svg {
 
 .footer_top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr 1.5fr;
   gap: 60px;
   padding-bottom: 60px;
   border-bottom: 1px solid #3a3330;
@@ -1535,8 +1535,23 @@ header .util_nav a svg {
 
   .newsletter_form {
     max-width: 320px;
+    width: 100%;
     margin: 0 auto;
-  }
+    box-sizing: border-box;
+}
+
+.newsletter_form input {
+    min-width: 0;
+    padding: 12px 10px;
+    font-size: 11px;
+}
+
+.newsletter_form button {
+    padding: 12px 14px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+}
 
   .footer_bottom .footer_policy {
     flex-wrap: wrap;
@@ -1548,6 +1563,7 @@ header .util_nav a svg {
     font-size: 11px;
     line-height: 1.8;
     word-break: keep-all;
+    text-align: center;
   }
 
   .inner_box.one {
