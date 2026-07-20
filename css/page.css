@@ -696,11 +696,6 @@ header .util_nav a svg {
     color: #fff;
 }
 
-.material_btns {
-    display: flex;
-    gap: 8px;
-}
-
 .material_btn {
     display: flex;
     flex-direction: column;
@@ -708,8 +703,16 @@ header .util_nav a svg {
     gap: 6px;
     cursor: pointer;
     padding: 8px 12px;
+    width: 74px;
+    box-sizing: border-box;
     border: 1px solid #ede9e3;
     transition: border-color 0.25s;
+}
+
+.material_btns {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
 }
 
 .material_btn.active {
@@ -727,6 +730,8 @@ header .util_nav a svg {
     font-size: 11px;
     letter-spacing: 0.08em;
     color: #8a8078;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .qty_group {
@@ -1039,6 +1044,66 @@ header .util_nav a svg {
 .mag_card[style*="display: none"] {
     grid-column: unset;
 }
+
+.cart_added_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.cart_added_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: #FAF8F5;
+    border-left: 2px solid #c9a96e;
+}
+
+.cart_added_item img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cart_added_info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart_added_name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    color: #1e1a17;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart_added_meta {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    color: #8a8078;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ── 태블릿 (1024px 이하) ── */
 @media (max-width: 1024px) {
@@ -1402,24 +1467,24 @@ header .util_nav a svg {
     }
 
     .newsletter_form {
-    max-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
 
-.newsletter_form input {
-    min-width: 0;
-    padding: 12px 10px;
-    font-size: 11px;
-}
+    .newsletter_form input {
+        min-width: 0;
+        padding: 12px 10px;
+        font-size: 11px;
+    }
 
-.newsletter_form button {
-    padding: 12px 14px;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    flex-shrink: 0;
-}
+    .newsletter_form button {
+        padding: 12px 14px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        flex-shrink: 0;
+    }
 
     .footer_bottom .footer_policy {
         flex-wrap: wrap;
@@ -1435,8 +1500,8 @@ header .util_nav a svg {
     }
 
     .inner_box.one {
-    padding: 0 0;
-  }
+        padding: 0 0;
+    }
 
     /* 브레드크럼 */
     #breadcrumb {
@@ -1579,7 +1644,7 @@ header .util_nav a svg {
 
     /* 패널 옵션들 가로 스크롤 */
     .option_group {
-        margin-bottom: 14px;
+        margin-bottom: 36px;
     }
 
     .option_label {
@@ -1603,21 +1668,46 @@ header .util_nav a svg {
         white-space: nowrap;
     }
 
-    .material_btns {
+    .material_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 6px;
+        cursor: pointer;
+        padding: 8px 12px;
+        width: 74px;
+        box-sizing: border-box;
+        border: 1px solid #ede9e3;
+        transition: border-color 0.25s;
+    }
+
+    .material_btns {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+    .material_btn.active {
+        border-color: #c9a96e;
     }
 
     .material_swatch {
-        width: 22px;
-        height: 22px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
     }
 
     .material_btn span {
-        font-size: 10px;
+        font-family: 'Noto Serif KR', serif;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        color: #8a8078;
+        text-align: center;
+        white-space: nowrap;
     }
 
     .qty_group {
-        margin-bottom: 16px;
+        margin-bottom: 36px;
     }
 
     .qty_btn {
