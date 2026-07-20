@@ -488,6 +488,10 @@ header .util_nav a svg {
     margin-bottom: 80px;
 }
 
+.explain {
+    word-break: keep-all;
+}
+
 .material_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -531,6 +535,7 @@ header .util_nav a svg {
     font-size: 14px;
     color: #8a8078;
     line-height: 1.7;
+    word-break: keep-all;
 }
 
 .care_item::before {
@@ -633,6 +638,7 @@ header .util_nav a svg {
     line-height: 1.9;
     letter-spacing: 0.03em;
     padding-left: 45px;
+    word-break: keep-all;
 }
 
 /* ── 오른쪽 패널 고정 ── */
@@ -887,7 +893,7 @@ header .util_nav a svg {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
     font-size: 17px;
     font-weight: 500;
-    letter-spacing: 0.30em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
     color: #f0ebe4;
     margin-bottom: 24px;
@@ -1029,11 +1035,6 @@ header .util_nav a svg {
     line-height: 2;
 }
 
-
-.mag_card.featured {
-    grid-column: 1 / 3;
-}
-
 /* 필터링 후 display none 처리 */
 .mag_card[style*="display: none"] {
     grid-column: unset;
@@ -1171,6 +1172,20 @@ header .util_nav a svg {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 430px) {
 
     .inner_box {
@@ -1199,24 +1214,24 @@ header .util_nav a svg {
     header .gnb {
         display: none;
         position: fixed;
-        top: 0;
+        top: 80px;
         left: 0;
         width: 100%;
-        height: 100vh;
+        height: calc(100dvh - 120px);
         background: #fff;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 100px 40px 40px;
-        gap: 0;
-        z-index: 999;
+        padding: 20px 40px 80px;
         overflow-y: auto;
+        overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
+        z-index: 999;
+        touch-action: pan-y;
     }
 
     header .gnb.open {
         display: flex;
-        height: 820px;
     }
 
     header .gnb>li>a {
@@ -1239,6 +1254,7 @@ header .util_nav a svg {
 
 
     /* 서브메뉴 */
+
     header .gnb .sub {
         position: static;
         border: none;
@@ -1249,6 +1265,7 @@ header .util_nav a svg {
         overflow: hidden;
         opacity: 0;
         transform: translateX(-24px);
+        overflow-y: auto;
         transition: max-height 0.35s ease, transform 0.35s ease, opacity 0.3s ease;
     }
 
@@ -1289,7 +1306,6 @@ header .util_nav a svg {
         background: none;
         border: none;
         z-index: 1000;
-        justify-self: start;
     }
 
     .hamburger span {
@@ -1342,64 +1358,65 @@ header .util_nav a svg {
 
     /* ── 푸터 ── */
     #footer {
-    padding-top: 40px;
-  }
-  .footer_top {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 40px 20px 40px;
-    text-align: center;
-  }
+        padding-top: 40px;
+    }
 
-  .footer_brand {
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .footer_top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px 40px;
+        text-align: center;
+    }
 
-  .footer_sns {
-    justify-content: center;
-  }
+    .footer_brand {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .footer_brand p {
-    max-width: 100%;
-  }
+    .footer_sns {
+        justify-content: center;
+    }
 
-  .footer_bottom {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-    padding: 20px 0;
-  }
+    .footer_brand p {
+        max-width: 100%;
+    }
 
-  .footer_info,
-  .footer_newsletter {
-    grid-column: 1;
-    width: 100%;
-  }
+    .footer_bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 20px 0;
+    }
 
-  .footer_hours {
-    max-width: 240px;
-    margin: 0 auto;
-  }
+    .footer_info,
+    .footer_newsletter {
+        grid-column: 1;
+        width: 100%;
+    }
 
-  .newsletter_form {
-    max-width: 320px;
-    margin: 0 auto;
-  }
+    .footer_hours {
+        max-width: 240px;
+        margin: 0 auto;
+    }
 
-  .footer_bottom .footer_policy {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
+    .newsletter_form {
+        max-width: 320px;
+        margin: 0 auto;
+    }
 
-  .footer_biz p {
-    font-size: 11px;
-    line-height: 1.8;
-    word-break: keep-all;
-  }
+    .footer_bottom .footer_policy {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer_biz p {
+        font-size: 11px;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
 
     /* 브레드크럼 */
     #breadcrumb {
@@ -1614,12 +1631,5 @@ header .util_nav a svg {
 
     .panel_info {
         display: none;
-    }
-
-    /* 모바일에서 패널 정보 숨김 */
-
-    /* 패널 높이만큼 하단 여백 추가 */
-    #product_info {
-        padding-bottom: 320px;
     }
 }

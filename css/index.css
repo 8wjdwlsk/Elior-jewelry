@@ -619,6 +619,7 @@ header .util_nav a svg {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.35s ease, transform 0.35s ease;
+  word-break: keep-all;
 }
 
 .look_item:hover .look_overlay span {
@@ -652,6 +653,7 @@ header .util_nav a svg {
   border: 1px solid #ede9e3;
   position: relative;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  word-break: keep-all;
 }
 
 .review_card:hover {
@@ -1253,6 +1255,7 @@ header .util_nav a svg {
   .look_overlay span {
     opacity: 1;
     transform: none;
+    word-break: keep-all;
   }
 
   /* 리뷰 */
@@ -1493,7 +1496,7 @@ header .util_nav a svg {
   .footer_top {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 40px 20px 40px;
+    padding: 40px 0 40px;
     text-align: center;
   }
 
@@ -1634,10 +1637,12 @@ header .util_nav a svg {
   #intro .text h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    letter-spacing: 2px;
   }
 
   #intro .text p {
     font-size: 13px;
+    word-break: keep-all;
   }
 
   /* 베스트셀러 */
