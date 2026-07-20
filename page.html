@@ -63,7 +63,7 @@
                         <a href="magazine.html">Magazine</a>
                     </li>
                 </ul>
-                
+
                 <div class="util_nav">
                     <a href="#" aria-label="검색">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -229,7 +229,7 @@
                 </div>
 
                 <!-- 오른쪽 고정 패널 -->
-                <div class="info_right">
+                <div class="info_right" id="purchasePanel">
                     <div class="purchase_panel">
 
                         <div class="option_group">
@@ -455,29 +455,78 @@
 
         initWish();
 
+
+        function positionPurchasePanel() {
+            const panel = document.getElementById('purchasePanel');
+            const priceWrap = document.querySelector('.product_price_wrap');
+            const inner = document.querySelector('#product_info .inner_box');
+            if (!panel || !priceWrap || !inner) return;
+
+            if (window.innerWidth <= 430) {
+                if (priceWrap.nextElementSibling !== panel) {
+                    priceWrap.insertAdjacentElement('afterend', panel);
+                }
+            } else {
+                if (panel.parentElement !== inner) {
+                    inner.appendChild(panel);
+                }
+            }
+        }
+
+        window.addEventListener('resize', positionPurchasePanel);
+        positionPurchasePanel();
+
+
         // 햄버거 메뉴
         const hamburger = document.getElementById('hamburger');
         const gnb = document.querySelector('.gnb');
 
         if (hamburger && gnb) {
+
             hamburger.addEventListener('click', () => {
+
                 hamburger.classList.toggle('open');
                 gnb.classList.toggle('open');
-                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+
+                if (gnb.classList.contains('open')) {
+                    // 배경 페이지만 스크롤 막기
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+
             });
 
             // 서브메뉴 토글
             gnb.querySelectorAll('li > a').forEach(link => {
+
                 link.addEventListener('click', (e) => {
+
                     if (window.innerWidth <= 430) {
+
                         const sub = link.nextElementSibling;
+
                         if (sub && sub.classList.contains('sub')) {
+
                             e.preventDefault();
-                            link.parentElement.classList.toggle('sub_open');
+
+                            const li = link.parentElement;
+                            li.classList.toggle('sub_open');
+
+                            // 펼쳐진 메뉴가 보이도록 살짝 이동
+                            setTimeout(() => {
+                                li.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "nearest"
+                                });
+                            }, 100);
                         }
                     }
+
                 });
+
             });
+
         }
     </script>
 </body>
