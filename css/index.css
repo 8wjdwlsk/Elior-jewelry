@@ -293,6 +293,7 @@ header .util_nav a svg {
   color: #e8d9c4;
   line-height: 1.9;
   margin-bottom: 40px;
+  word-break: keep-all;
 }
 
 .mv_sub.dark {
