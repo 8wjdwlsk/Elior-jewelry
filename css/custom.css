@@ -1429,11 +1429,14 @@ header .logo {
     .form_group textarea {
         font-size: 14px;
         padding: 11px 14px;
+        word-break: keep-all;
     }
 
     .form_submit {
         padding: 14px 36px;
         font-size: 12px;
+        align-self: stretch;
+        text-align: center;
     }
 
     /* 옵션 */

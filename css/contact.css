@@ -270,7 +270,7 @@ header .util_nav a svg {
 
 /* ── 섹션 헤더 ── */
 .section_header {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .section_num {
@@ -307,11 +307,12 @@ header .util_nav a svg {
 /* ── 상품 문의 폼 ── */
 .inquiry_intro {
     font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
-    font-size: 16px;
-    color: #8a8078;
-    line-height: 2;
+    font-size: 17px;
+    color: #4a4238;
+    line-height: 2.1;
     letter-spacing: 0.03em;
-    margin-bottom: 48px;
+    margin-bottom: 72px;
+    word-break: keep-all;
 }
 
 .inquiry_form {
@@ -379,6 +380,7 @@ header .util_nav a svg {
     color: #b8a898;
     letter-spacing: 0.05em;
     line-height: 1.8;
+    word-break: keep-all;
 }
 
 .form_submit {
@@ -392,7 +394,7 @@ header .util_nav a svg {
     padding: 18px 56px;
     cursor: pointer;
     transition: background 0.3s;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .form_submit:hover {
@@ -486,6 +488,7 @@ header .util_nav a svg {
     letter-spacing: 0.03em;
     padding: 0 0 24px;
     display: none;
+    word-break: keep-all;
 }
 
 .faq_item.open .faq_answer {
@@ -516,6 +519,7 @@ header .util_nav a svg {
     color: #1e1a17;
     line-height: 2;
     letter-spacing: 0.03em;
+    word-break: keep-all;
 }
 
 .visit_info_item p span {
@@ -1176,8 +1180,8 @@ header .logo {
 
     /* 상품 문의 */
     .inquiry_intro {
-        font-size: 13px;
-        margin-bottom: 24px;
+        font-size: 14px;
+        margin-bottom: 40px;
     }
 
     .form_row {
@@ -1194,6 +1198,8 @@ header .logo {
     .form_group textarea {
         font-size: 14px;
         padding: 11px 14px;
+        word-break: keep-all;
+        align-self: stretch;
     }
 
     .form_notice {
@@ -1209,8 +1215,8 @@ header .logo {
 
     /* FAQ */
     .faq_intro {
-        font-size: 13px;
-        margin-bottom: 28px;
+        font-size: 14px;
+        margin-bottom: 40px;
     }
 
     .faq_category_title {
@@ -1254,9 +1260,5 @@ header .logo {
 
     .visit_form h3 {
         font-size: 18px;
-    }
-
-    .visit_form p {
-        font-size: 13px;
     }
 }
