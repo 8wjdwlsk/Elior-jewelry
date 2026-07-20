@@ -1439,6 +1439,7 @@ header .util_nav a svg {
     background: none;
     border: none;
     z-index: 1000;
+    justify-self: start;
   }
 
   .hamburger span {
@@ -1538,20 +1539,20 @@ header .util_nav a svg {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-}
+  }
 
-.newsletter_form input {
+  .newsletter_form input {
     min-width: 0;
     padding: 12px 10px;
     font-size: 11px;
-}
+  }
 
-.newsletter_form button {
+  .newsletter_form button {
     padding: 12px 14px;
     font-size: 10px;
     letter-spacing: 0.08em;
     flex-shrink: 0;
-}
+  }
 
   .footer_bottom .footer_policy {
     flex-wrap: wrap;
@@ -1610,11 +1611,11 @@ header .util_nav a svg {
     object-position: center;
   }
 
-  .mv_label.dark{
+  .mv_label.dark {
     padding-bottom: 15px;
   }
 
-  .mv_sub .dark{
+  .mv_sub .dark {
     font-size: 13px;
     word-break: keep-all;
   }
