@@ -368,24 +368,51 @@
         const gnb = document.querySelector('.gnb');
 
         if (hamburger && gnb) {
+
             hamburger.addEventListener('click', () => {
+
                 hamburger.classList.toggle('open');
                 gnb.classList.toggle('open');
-                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+
+                if (gnb.classList.contains('open')) {
+                    // 배경 페이지만 스크롤 막기
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+
             });
 
             // 서브메뉴 토글
             gnb.querySelectorAll('li > a').forEach(link => {
+
                 link.addEventListener('click', (e) => {
+
                     if (window.innerWidth <= 430) {
+
                         const sub = link.nextElementSibling;
+
                         if (sub && sub.classList.contains('sub')) {
+
                             e.preventDefault();
-                            link.parentElement.classList.toggle('sub_open');
+
+                            const li = link.parentElement;
+                            li.classList.toggle('sub_open');
+
+                            // 펼쳐진 메뉴가 보이도록 살짝 이동
+                            setTimeout(() => {
+                                li.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "nearest"
+                                });
+                            }, 100);
                         }
                     }
+
                 });
+
             });
+
         }
     </script>
 </body>
