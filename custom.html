@@ -273,8 +273,7 @@
                                 <p>다이아몬드 팁으로 새기는 방식으로 빛에 반짝이는 효과가 있어 특별한 감성을 연출합니다.</p>
                             </div>
                         </div>
-                        <p class="option_desc">· 각인 위치와 폰트는 상담 시 선택 가능합니다. 한글 최대 8자, 영문 최대 15자를 권장합니다. 날짜, 좌표, 짧은 문구 등
-                            다양한 표현이 가능합니다.</p>
+                        <p class="option_desc">· 각인 위치와 폰트는 상담 시 선택 가능합니다. <br> · 한글 최대 8자, 영문 최대 15자를 권장합니다. <br> · 날짜, 좌표, 짧은 문구 등 다양한 표현이 가능합니다.</p>
                     </div>
 
                     <!-- 스톤 -->
@@ -305,7 +304,7 @@
                                 <p>심플한 금속 라인만으로 완성하는 미니멀 스타일.</p>
                             </div>
                         </div>
-                        <p class="option_desc">· 스톤 선택은 상담 시 실물 샘플을 보며 결정하실 수 있습니다. 탄생석 차트가 필요하시면 상담 시 안내드립니다.</p>
+                        <p class="option_desc">· 스톤 선택은 상담 시 실물 샘플을 보며 결정하실 수 있습니다. <br> · 탄생석 차트가 필요하시면 상담 시 안내드립니다.</p>
                     </div>
 
                     <!-- 소재 -->
@@ -336,7 +335,7 @@
                                 <p>희소성 높은 귀금속. 변색 없이 영구적인 화이트 컬러 유지.</p>
                             </div>
                         </div>
-                        <p class="option_desc">· 가격은 제품 종류와 무게에 따라 달라집니다. 정확한 가격은 상담 시 안내드립니다.</p>
+                        <p class="option_desc">· 가격은 제품 종류와 무게에 따라 달라집니다. <br> · 정확한 가격은 상담 시 안내드립니다.</p>
                     </div>
                 </section>
 
@@ -352,19 +351,19 @@
                         <div class="size_method_item">
                             <h4>방법 1 — 실 / 종이 이용</h4>
                             <ol>
-                                <li>실이나 얇은 종이를 손가락에 감아주세요</li>
-                                <li>손가락 둘레를 표시한 뒤 자로 길이를 재주세요</li>
-                                <li>측정된 길이(mm)를 아래 표에서 찾아주세요</li>
-                                <li>관절이 굵다면 관절 위에서도 측정해주세요</li>
+                                <li>실이나 얇은 종이를 손가락에 감아주세요.</li>
+                                <li>손가락 둘레를 표시한 뒤 자로 길이를 재주세요.</li>
+                                <li>측정된 길이(mm)를 아래 표에서 찾아주세요.</li>
+                                <li>관절이 굵다면 관절 위에서도 측정해주세요.</li>
                             </ol>
                         </div>
                         <div class="size_method_item">
                             <h4>방법 2 — 기존 반지 이용</h4>
                             <ol>
-                                <li>잘 맞는 반지의 안쪽 지름을 자로 재주세요</li>
-                                <li>지름(mm)을 아래 표에서 찾아주세요</li>
-                                <li>정확한 측정을 위해 2-3회 반복 측정을 권장합니다</li>
-                                <li>손가락이 붓는 저녁 시간대 측정을 권장합니다</li>
+                                <li>잘 맞는 반지의 안쪽 지름을 자로 재주세요.</li>
+                                <li>지름(mm)을 아래 표에서 찾아주세요.</li>
+                                <li>정확한 측정을 위해 2-3회 반복 측정을 권장합니다.</li>
+                                <li>손가락이 붓는 저녁 시간대 측정을 권장합니다.</li>
                             </ol>
                         </div>
                     </div>
@@ -798,24 +797,51 @@
         const gnb = document.querySelector('.gnb');
 
         if (hamburger && gnb) {
+
             hamburger.addEventListener('click', () => {
+
                 hamburger.classList.toggle('open');
                 gnb.classList.toggle('open');
-                document.body.style.overflow = gnb.classList.contains('open') ? 'hidden' : '';
+
+                if (gnb.classList.contains('open')) {
+                    // 배경 페이지만 스크롤 막기
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+
             });
 
             // 서브메뉴 토글
             gnb.querySelectorAll('li > a').forEach(link => {
+
                 link.addEventListener('click', (e) => {
+
                     if (window.innerWidth <= 430) {
+
                         const sub = link.nextElementSibling;
+
                         if (sub && sub.classList.contains('sub')) {
+
                             e.preventDefault();
-                            link.parentElement.classList.toggle('sub_open');
+
+                            const li = link.parentElement;
+                            li.classList.toggle('sub_open');
+
+                            // 펼쳐진 메뉴가 보이도록 살짝 이동
+                            setTimeout(() => {
+                                li.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "nearest"
+                                });
+                            }, 100);
                         }
                     }
+
                 });
+
             });
+
         }
     </script>
 </body>
